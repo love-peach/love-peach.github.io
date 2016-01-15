@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html class="full-screen">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="../../favicon.jpg">
+    <link rel="stylesheet" href="../../dist/css/style.min.css"/>
+    <title>小鸭哥菜品首页</title>
+    <script src="../../dist/js/jquery.min.js"></script>
+    <script src="../../dist/js/index.js"></script>
+    <script src="../../dist/js/navbar_active.js"></script>
+</head>
+<body class="full-screen">
+<input type="hidden" name="whichPages" value="indexPage"/>
+<!--导航条开始-->
+<div class="nav-bar" id="navbar">
+    <div class="nav-left">
+        <a class="nav-brand" href="javascript:;"><img src="../../dist/img/index/logo.png" alt="小鸭哥logo"/></a>
+    </div>
+    <div class="nav-right">
+        <ul class="nav-menu" style="padding-right: 40px;">
+            <li id="indexPage" class="active"><a href="index.html">主页</a></li>
+            <li id="dishesPage"><a href="dishes.html">菜品</a></li>
+            <li id="dynamicPage"><a href="dynamic.html">动态</a></li>
+            <li class="bar"></li>
+            <li class="menu-icon-wrap">
+                <a href="javascript:;">
+                    <img class="menu-icon menu-icon-white" src="../../dist/img/index/icon_weibo.png" alt="官方微博"/>
+                    <img class="menu-icon menu-icon-change" src="../../dist/img/index/icon_weibo_pink.png"
+                         alt="官方微博"/>
+                    官方微博
+                </a>
+            </li>
+            <li class="menu-icon-wrap">
+                <a href="javascript:;">
+                    <img class="menu-icon menu-icon-white" src="../../dist/img/index/icon_weixin.png" alt="官方微信"/>
+                    <img class="menu-icon menu-icon-change" src="../../dist/img/index/icon_weixin_green.png"
+                         alt="官方微信"/>
+                    官方微信
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+<!--导航条结束-->
+
+<!--导航点指示-->
+<div class="pagination">
+    <span class="pagination-bullet pagination-bullet-active"></span>
+    <span class="pagination-bullet"></span>
+    <span class="pagination-bullet"></span>
+    <span class="pagination-bullet"></span>
+    <span class="pagination-bullet"></span>
+    <span class="pagination-bullet"></span>
+</div>
+<!--上下箭头-->
+<div class="btn-prev" style="display: none;"></div>
+<div class="btn-next transparent"></div>
+<!--子页面-->
+<div class="page page0 page-active">
+    <div class="section-center">
+        <div class="content-wrap">
+            <div id="introduce_0_image"></div>
+        </div>
+        <div class="text-center mymenu">
+            <img src="../../dist/img/index/index_text0.png" alt="小鸭哥·全聚德旗下品牌·质量上乘，声震遐">
+        </div>
+        <!-- /.text-center mymenu -->
+    </div>
+</div>
+
+<div class="page page1">
+    <div class="section-left">
+        <div id="page1_ani1_1"></div>
+
+        <div id="page1_ani1_2" class="text-box">
+            <div class="inner">
+                <h3 class="section-number"> - 01 - </h3>
+
+                <h1 class="section-title">创建于1894年的“全聚德”传承宫廷炉烤鸭技艺，是享誉海内外</h1>
+
+                <p class="section-text">
+                    创建于1894年的“全聚德”，传承宫廷炉烤鸭技艺，是享誉海内外的“中华第一烤鸭店”。历经三个世纪的磨砺，全聚德现已发展为拥有100余家成员企业，年接待近2000万顾客的知名品牌，成为广大消费者家庭宴请、朋友宴请、商务宴请的首选之地。</p>
+            </div>
+            <!-- /.inner -->
+        </div>
+        <!-- /.text-box -->
+    </div>
+    <div class="section-right isabelline-bg">
+        <div id="page1_ani1_3" class="text-center">
+            <div class="text-center phone-frame">
+                <div class="phone-frame-inner">
+                    <img src="../../dist/img/index/iphone_content1.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="page page2">
+    <div class="section-left">
+        <div id="page2_ani1_1"></div>
+        <div id="page2_ani1_2" class="text-box">
+            <div class="inner">
+                <h3 class="section-number"> - 02 - </h3>
+
+                <h1 class="section-title">创建于1894年的“全聚德”传承宫廷炉烤鸭技艺，是享誉海内外</h1>
+
+                <p class="section-text">
+                    创建于1894年的“全聚德”，传承宫廷炉烤鸭技艺，是享誉海内外的“中华第一烤鸭店”。历经三个世纪的磨砺，全聚德现已发展为拥有100余家成员企业，年接待近2000万顾客的知名品牌，成为广大消费者家庭宴请、朋友宴请、商务宴请的首选之地。</p>
+
+            </div>
+            <!-- /.inner -->
+        </div>
+        <!-- /.text-box -->
+    </div>
+    <div class="section-right isabelline-bg">
+        <div id="page2_ani1_3" class="text-center phone-frame">
+            <div class="phone-frame-inner">
+                <img src="../../dist/img/index/iphone_content1.png" alt="">
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="page page3">
+    <div class="section-center" style="z-index:1">
+        <div id="page3_ani2_1"></div>
+    </div>
+    <div class="section-left">
+        <!--<div id="page3_ani1_1"></div>-->
+        <div id="page3_ani1_2" class="text-box">
+            <div class="inner">
+
+                <h3 class="section-number"> - 03 - </h3>
+
+                <h1 class="section-title">创建于1894年的“全聚德”传承宫廷炉烤鸭技艺，是享誉海内外</h1>
+
+                <p class="section-text">
+                    创建于1894年的“全聚德”，传承宫廷炉烤鸭技艺，是享誉海内外的“中华第一烤鸭店”。历经三个世纪的磨砺，全聚德现已发展为拥有100余家成员企业，年接待近2000万顾客的知名品牌，成为广大消费者家庭宴请、朋友宴请、商务宴请的首选之地。</p>
+            </div>
+            <!-- /.inner -->
+        </div>
+        <!-- /.text-box -->
+    </div>
+    <div class="section-right isabelline-bg">
+        <div id="page3_ani1_3" class="text-center phone-frame">
+            <div class="phone-frame-inner">
+                <img src="../../dist/img/index/iphone_content3.png" style="height: 100%;width: 100%;" class="text-center" alt="">
+            </div>
+        </div>
+
+    </div>
+</div>
+<div class="page page4">
+    <div class="section-left">
+        <div id="page4_ani1_1"></div>
+        <div id="page4_ani1_2" class="text-box">
+            <div class="inner">
+
+                <h3 class="section-number"> - 04 - </h3>
+
+                <h1 class="section-title">创建于1894年的“全聚德”传承宫廷炉烤鸭技艺，是享誉海内外</h1>
+
+                <p class="section-text">
+                    创建于1894年的“全聚德”，传承宫廷炉烤鸭技艺，是享誉海内外的“中华第一烤鸭店”。历经三个世纪的磨砺，全聚德现已发展为拥有100余家成员企业，年接待近2000万顾客的知名品牌，成为广大消费者家庭宴请、朋友宴请、商务宴请的首选之地。</p>
+            </div>
+            <!-- /.inner -->
+        </div>
+        <!-- /.text-box -->
+    </div>
+    <div class="section-right isabelline-bg">
+        <div id="page4_ani1_3" class="text-center img-title-wrap ">
+            <div class="img-title">
+                <img src="../../dist/img/index/image_title.png" alt="梦想新时代"/>
+            </div>
+            <p class="text-content1">
+                创建于1894年的“全聚德”，传承宫廷炉烤鸭技艺，是享誉海内外的“中华第一烤鸭店”。历经三个世纪的磨砺，全聚德现已发展为拥有100余家成员企业，年接待近2000万顾客的知名品牌，成为广大消费者家庭宴请、朋友宴请、商务宴请的首选之地。</p>
+
+            <p class="text-content2">
+                创建于1894年的“全聚德”，传承宫廷炉烤鸭技艺，是享誉海内外的“中华第一烤鸭店”。历经三个世纪的磨砺，全聚德现已发展为拥有100余家成员企业，年接待近2000万顾客的知名品牌，成为广大消费者家庭宴请、朋友宴请、商务宴请的首选之地。</p>
+
+            <p class="text-content3">
+                创建于1894年的“全聚德”，传承宫廷炉烤鸭技艺，是享誉海内外的“中华第一烤鸭店”。历经三个世纪的磨砺，全聚德现已发展为拥有100余家成员企业，年接待近2000万顾客的知名品牌，成为广大消费者家庭宴请、朋友宴请、商务宴请的首选之地。</p>
+        </div>
+    </div>
+</div>
+<div class="page page5">
+    <div class="section-left">
+        <div id="page5_ani1_1"></div>
+        <div id="page5_ani1_2" class="text-box">
+            <div class="inner">
+                <h3 class="section-number"> - 05 - </h3>
+
+                <h1 class="section-title">创建于1894年的“全聚德”传承宫廷炉烤鸭技艺，是享誉海内外</h1>
+
+                <p class="section-text">
+                    创建于1894年的“全聚德”，传承宫廷炉烤鸭技艺，是享誉海内外的“中华第一烤鸭店”。历经三个世纪的磨砺，全聚德现已发展为拥有100余家成员企业，年接待近2000万顾客的知名品牌，成为广大消费者家庭宴请、朋友宴请、商务宴请的首选之地。</p>
+
+            </div>
+            <!-- /.inner -->
+        </div>
+        <!-- /.text-box -->
+    </div>
+    <div class="section-right isabelline-bg">
+        <div id="page5_ani1_3" class="text-center phone-frame">
+            <div class="phone-frame-inner">
+                <img src="../../dist/img/index/iphone_content5.png" alt="">
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

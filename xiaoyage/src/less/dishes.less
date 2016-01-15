@@ -1,0 +1,287 @@
+.flu-body {
+  height: inherit;
+  overflow: auto;
+  overflow-x: hidden;
+
+}
+
+.container {
+  max-width: 1180px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.dishes-container {
+  padding-top: 100px;
+  padding-bottom: 170px;
+}
+
+.center-text {
+  text-align: center;
+}
+
+.btn-ghost {
+  display: inline-block;
+  padding: 15px 40px;
+  color: @mainTextColor;
+  text-align: center;
+  border: 1px solid @grayColor;
+  box-sizing: border-box;
+  transition: all .3s ease;
+}
+
+.btn-ghost:hover {
+  background-color: @mainColor;
+  border: 1px solid @mainColor;
+  color: #fff;
+}
+
+.clearfix:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+  font-size: 0;
+}
+/*这是针对于IE6的，因为IE6不支持:after伪类，
+这个神奇的zoom:1让IE6的元素可以清除浮动来包裹内部元素。*/
+.clearfix {
+  *zoom: 1;
+}
+
+
+
+.double-underline {
+  position: absolute;
+  width: 100%;
+  top: 7px;
+  border: 0;
+  border-bottom: 4px double @grayColor;
+}
+
+//菜品频道样式
+.dishes-channel {
+  margin: 20px;
+  font-family: arial, 'Microsoft Yahei', '微软雅黑';
+  .top-banner {
+    position: relative;
+    height: 580px;
+    width: 100%;
+    background: url('../../dist/img/index/iphone_content3.png');
+    background-size: 1920px 1080px;
+    .banner-content-wrap {
+      width: 580px;
+      height: 310px;
+      margin: auto auto;
+      padding: 5px;
+      background-color: #fff;
+      .content-box {
+        height: 100%;
+        border: 1px solid @grayColor;
+        h2 {
+          color: @mainTextColor;
+          font-weight: normal;
+          font-size: 40px;
+          margin-top: 40px;
+          margin-bottom: 40px;
+        }
+        p {
+          color: @subTextColor;
+          line-height: 1.6;
+          font-size: 16px;
+          margin-bottom: 25px;
+        }
+      }
+    }
+  }
+
+  //菜品分类样式
+  .dishes-classify {
+    position: relative;
+    padding-bottom: 120px;
+    .classify-title {
+      position: relative;
+      z-index: 10;
+      padding-right: 90px;
+      padding-left: 50px;
+      font-size: 24px;
+      background: @mainBgColor 80% 50% no-repeat;
+
+    }
+    .actionable {
+      color: @subTextColor;
+      background-image: url('../../dist/img/index/btn-sort-down-lg.png');
+      transition: all .3s;
+    }
+    .actionable.on {
+      color: @mainTextColor;
+      background-image: url('../../dist/img/index/btn-sort-up-lg.png');
+
+    }
+    //分类列表按钮样式
+    .classify-list-wrap {
+      display: none;
+      .classify-list-content {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        color: @subTextColor;
+        clear: both;
+        .list-part {
+          padding-top: 10px;
+          padding-bottom: 10px;
+          + .list-part {
+            border-top: 1px solid #e1e1e1;
+          }
+          h2 {
+            font-size: 1em;
+            float: left;
+            width: 100px;
+            margin-bottom: 12px;
+            margin-top: 12px;
+            text-align: left;
+            font-weight: normal;
+          }
+          .list-part-content {
+            overflow: hidden;
+            .list-part-item {
+              float: left;
+              a {
+                display: inline-block;
+                line-height: 1;
+                padding: 10px 0;
+                margin: 4px;
+                width: 80px;
+                text-align: center;
+                outline: none;
+                border: 1px solid @mainBgColor;
+              }
+              a:hover {
+                border: 1px solid @grayColor;
+                background-color: #fff;
+              }
+            }
+            .list-part-item.active a {
+              border: 1px solid @mainColor;
+              color: @mainColor;
+              background-color: #fff;
+            }
+          }
+        }
+      }
+    }
+    .classify-desc {
+      margin: 0;
+      color: @mainTextColor;
+    }
+  }
+
+  //菜品卡片列表样式
+  .dishes-list {
+//    overflow: hidden;因为加了clearfix空标签，所以干掉之
+    width: 102%;
+    margin-bottom: 35px;
+    box-shadow: 0 0 0 #fff;
+    .dishes-list-item {
+      &:hover {
+        box-shadow: 0 0 3px #aaa;
+        transform: scale(1.03);
+      }
+      transition: all .3s ease;
+      float: left;
+      width: 23%;
+      margin-right: 2%;
+      margin-bottom: 35px;
+      //      padding: 10px;
+      //      border: 1px solid @grayColor;
+
+      background: url('../../dist/img/index/card_border.png') no-repeat center center;
+      background-size: 100% 100%;
+      //      background-color: #fbfbfb;
+
+      box-sizing: border-box;
+      .list-item-content {
+        //        background: url('../../dist/img/index/card_border.png') no-repeat center center;
+        //        background-size: 100% 100%;
+        display: block;
+        //        padding-top: 70px;
+        //        padding-bottom: 20px;
+        padding: 80px 10px 40px;
+        a {
+          display: block;
+        }
+        .dish-title {
+          margin: 0 0 10px;
+          color: @mainTextColor;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+        .dish-brief {
+          margin: 0 0 20px;
+          color: @subTextColor;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+        .dish-img {
+          min-height: 170px;
+        }
+        .price {
+          color: @subTextColor;
+          .price-number {
+            font-size: 25px;
+            color: @mainColor;
+          }
+        }
+      }
+    }
+  }
+
+  //加载更多
+  .btn-ghost-more {
+    width: 100%;
+  }
+}
+
+//底部
+footer {
+  padding-top: 40px;
+  height: 100px;
+  background-color: #5f5f5c;
+  p {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: @subTextColor;
+  }
+}
+
+//菜品详情页面样式
+.dish-details {
+  background: #fff;
+}
+
+#back-to-top {
+  display: none;
+  position: fixed;
+  bottom: 40px;
+  right: 46px;
+  height: 50px;
+  width: 50px;
+  line-height: 50px;
+  text-align: center;
+  border-radius: 50px;
+  background-color: #aaa;
+  transition: background-color .3s ease;
+  img {
+    display: inline-block;
+    line-height: 50px;
+  }
+}
+
+#back-to-top:hover {
+  background-color: @mainColor;
+}
