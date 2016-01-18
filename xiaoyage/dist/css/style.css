@@ -2845,14 +2845,144 @@ Copyright (c) 2015 Daniel Eden
   -webkit-animation-name: slideOutUp;
   animation-name: slideOutUp;
 }
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: arial, 'Microsoft Yahei', '微软雅黑';
+}
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0 0 10px;
+}
+h5,
+h6,
+form {
+  margin: 0;
+}
+ol,
+li,
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+img {
+  border: 0;
+}
 a {
+  outline: 0;
   color: inherit;
+  text-decoration: none;
+}
+.flu-body {
+  height: inherit;
+  overflow: auto;
+  overflow-x: hidden;
+}
+.full-screen {
+  position: relative;
+  height: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.full-width {
+  display: inline-block;
+  width: 100%;
+}
+.container {
+  position: relative;
+  max-width: 1180px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 15px;
+  padding-left: 15px;
 }
 .content-wrap {
   width: 100%;
   height: 100%;
   position: relative;
   display: inline-block;
+}
+.clearfix:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+  font-size: 0;
+}
+/*这是针对于IE6的，因为IE6不支持:after伪类，
+这个神奇的zoom:1让IE6的元素可以清除浮动来包裹内部元素。*/
+.clearfix {
+  *zoom: 1;
+}
+.fixed {
+  position: fixed;
+  z-index: 9999;
+}
+.hidden {
+  display: none;
+}
+.show {
+  display: block;
+}
+.text-center {
+  text-align: center;
+}
+.text-left {
+  text-align: left;
+}
+.text-right {
+  text-align: right;
+}
+.btn-ghost {
+  display: inline-block;
+  padding: 15px 40px;
+  color: #423D39;
+  text-align: center;
+  border: 1px solid #d9d9d9;
+  box-sizing: border-box;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+}
+.btn-ghost:hover {
+  background-color: #ff683c;
+  border: 1px solid #ff683c;
+  color: #fff;
+}
+.isabelline-bg {
+  background: #f2efed;
+}
+.double-underline {
+  position: absolute;
+  width: 100%;
+  top: 7px;
+  border: 0;
+  border-bottom: 4px double #d9d9d9;
+}
+.card-list-quarter {
+  width: 102%;
+  margin-bottom: 35px;
+  box-shadow: 0 0 0 #fff;
+}
+.card-list-quarter .list-item {
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+  float: left;
+  width: 23%;
+  margin-right: 2%;
+  margin-bottom: 35px;
+  box-sizing: border-box;
+}
+.card-list-quarter .list-item:hover {
+  box-shadow: 0 0 3px #aaa;
+  -webkit-transform: scale(1.03);
+          transform: scale(1.03);
 }
 .nav-bar {
   width: 100%;
@@ -2991,110 +3121,62 @@ a {
 .change-nav-bar .nav-right .nav-menu .change-menu-icon .menu-icon-change {
   display: inline-block;
 }
-/*覆盖*/
-body,
-html {
-  margin: 0;
-  padding: 0;
+.back-to-top-wrap {
+  position: fixed;
+  z-index: 999;
+  bottom: 40px;
+  width: 100%;
 }
-.full-screen {
-  position: relative;
-  height: 100%;
-  box-sizing: border-box;
-  overflow: hidden;
+.back-to-top-wrap .container {
+  padding-right: 35px;
 }
-img {
-  border: 0;
+.back-to-top-wrap #back-to-top {
+  display: none;
+  height: 50px;
+  width: 50px;
+  line-height: 50px;
+  text-align: center;
+  border-radius: 50px;
+  background: #aaa url('../../dist/img/index/arrow_prev_white.png') no-repeat top 15px center;
+  background-size: 75% auto;
+  -webkit-transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease;
 }
-a {
-  text-decoration: none;
+.back-to-top-wrap #back-to-top img {
+  display: inline-block;
+  line-height: 50px;
 }
-ol,
-ul,
-li {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+.back-to-top-wrap #back-to-top:hover {
+  background-color: #ff683c;
 }
-.isabelline-bg {
-  background: #f2efed;
+.footer {
+  padding-top: 40px;
+  height: 100px;
+  background-color: #5f5f5c;
 }
-.page-transitioning.isabelline-bg {
-  background: #fff;
-}
-.section-left,
-.section-right,
-.section-center {
-  overflow: hidden;
-  top: 20px;
-  bottom: 20px;
-  position: absolute;
-}
-.section-left {
-  right: 50%;
-  left: 20px;
-}
-.section-number {
-  font-family: arial, 'Microsoft Yahei', '微软雅黑';
-}
-.section-title {
-  color: #423D39;
-  font-family: arial, 'Microsoft Yahei', '微软雅黑';
-  font-size: 30px;
-}
-.section-text {
-  font-family: arial, 'Microsoft Yahei', '微软雅黑';
+.footer p {
   color: #7a7873;
 }
-.section-right {
-  left: 50%;
-  right: 20px;
-}
-.section-center {
-  left: 20px;
-  right: 20px;
-}
-.text-center {
-  position: absolute;
-  margin: auto;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-}
-.fixed {
-  position: fixed;
-  z-index: 9999;
-}
-/*幻灯片导航*/
+/*导航点样式*/
 .pagination {
   right: 40px;
   top: 50%;
   margin-top: -74px;
-  -webkit-transform: translate3d(0px, -50%, 0);
-  transform: translate3d(0px, -50%, 0);
   position: absolute;
   text-align: center;
-  -webkit-transition: 300ms;
-  transition: 300ms;
-  -webkit-transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0);
   z-index: 1002;
 }
 .pagination .pagination-bullet {
   display: block;
   margin: 15px 0;
-  cursor: pointer;
   width: 5px;
   height: 5px;
-}
-.pagination-bullet {
-  opacity: 1;
   border: 1px solid #423D39;
   border-radius: 10px;
   background-color: #423D39;
+  cursor: pointer;
 }
-.pagination-bullet-active {
+.pagination .pagination-bullet-active {
   border: 1px solid #423D39;
   border-radius: 10px;
   background-color: transparent;
@@ -3112,7 +3194,7 @@ li {
   margin-left: -30px;
   background-image: url("../../dist/img/index/arrow_next.png");
   -webkit-transition: background .2s;
-          transition: background .2s;
+  transition: background .2s;
   cursor: pointer;
 }
 .btn-prev {
@@ -3137,8 +3219,89 @@ li {
 .page.page-active {
   display: block;
 }
-.page.page-transitioning {
-  display: block;
+.section-left,
+.section-right,
+.section-center {
+  overflow: hidden;
+  top: 20px;
+  bottom: 20px;
+  position: absolute;
+}
+.section-left {
+  right: 50%;
+  left: 20px;
+}
+.section-right {
+  left: 50%;
+  right: 20px;
+}
+.section-center {
+  left: 20px;
+  right: 20px;
+}
+.section-number {
+  margin-top: 0;
+  font-size: 16px;
+}
+.section-title {
+  color: #423D39;
+  font-size: 24px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.img-placeholder {
+  height: 90px;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #e4e1dc;
+}
+.img-placeholder img {
+  height: 100%;
+}
+.section-text {
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: #7a7873;
+}
+.img-erweima-wrap {
+  display: inline-block;
+  padding: 10px;
+  border: 2px solid #dadada;
+}
+.img-erweima-wrap .img-erweima {
+  min-height: 110px;
+}
+.contact-info {
+  font-size: 20px;
+  text-align: left;
+}
+.contact-info li {
+  padding: 5px;
+  margin-bottom: 5px;
+  border-bottom: 1px solid #e6e1dd;
+  white-space: nowrap;
+}
+.contact-info li .contact-icon {
+  margin-right: 20px;
+}
+.center-block {
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+.full-center-size {
+  width: 320px;
+  height: 278px;
+  text-align: center;
+  color: #8a8581;
+  font-size: 15px;
+  line-height: 1.6;
+}
+.full-center-size img {
+  width: 100%;
 }
 .phone-frame {
   background-image: url("../../dist/img/index/iphone.png");
@@ -3176,70 +3339,35 @@ li {
   width: 370px;
   min-height: 348px;
   max-height: 348px;
-  padding: 60px 50px;
+  padding: 50px 50px 70px;
   color: #423D39;
   line-height: 1.6;
   text-align: center;
-}
-.text-box > div p {
-  font-size: .9375em;
-}
-.mymenu {
-  width: 320px;
-  height: 278px;
-  text-align: center;
-  color: #8a8581;
-  font-size: 15px;
-  line-height: 1.6;
-}
-.mymenu img {
-  width: 100%;
-}
-#page2_ani1_2 .inner img {
-  margin-top: 50px;
 }
 .page2 .section-right {
   -webkit-transition: background 1s;
   transition: background 1s;
 }
-#page2_ani4_2 {
-  position: relative;
-  margin-bottom: 80px;
-}
-#introduce_0_image {
+#page0-bg {
   background: url("../../dist/img/index/index_bg0.png") no-repeat center;
   background-size: 1920px 1127px;
   height: 100%;
 }
-#page1_ani1_1 {
+#page1-left1 {
   background: url("../../dist/img/index/index_bg1.png") no-repeat center;
   background-size: cover;
   position: absolute;
   width: 100%;
   height: 100%;
 }
-#page2_ani1_1 {
+#page2-left1 {
   background: url("../../dist/img/index/index_bg2.png") no-repeat center;
   background-size: cover;
   position: absolute;
   width: 100%;
   height: 100%;
 }
-#page3_ani2_1 {
-  background: url("../../dist/img/index/index_bg3_big.png") no-repeat center;
-  background-size: 2560px 1440px;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-}
-#page4_ani1_1 {
-  background: url("../../dist/img/index/index_bg4.png") no-repeat center;
-  background-size: cover;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-}
-#page5_ani1_1 {
+#page3-left1 {
   background: url("../../dist/img/index/index_bg5.png") no-repeat center;
   background-size: cover;
   position: absolute;
@@ -3306,30 +3434,7 @@ li {
   position: relative;
   margin: auto;
 }
-.msie .text-box {
-  left: auto;
-  right: auto;
-  top: auto;
-  bottom: auto;
-}
-.msie #page1_ani1_3 {
-  left: auto;
-  right: auto;
-  top: auto;
-  bottom: auto;
-  width: 100%;
-  height: 100%;
-}
-.msie #page2_ani1_3,
-.msie #page2_ani3_3,
-.msie .ani-review,
-.msie #page3_ani1_3 {
-  left: auto;
-  right: auto;
-  top: auto;
-  bottom: auto;
-}
-/* IPAD에서도 잘보이도록 */
+/* IPAD */
 @media (max-height: 650px) {
   .section-right > *,
   .text-box,
@@ -3337,15 +3442,6 @@ li {
   .btn-next,
   #footer > * {
     zoom: 0.6;
-  }
-  .msie .footer-top {
-    margin-top: 54px;
-  }
-  .msie #footer > hr {
-    margin-top: 36px;
-  }
-  .msie .footer-bottom {
-    margin-top: 24px;
   }
 }
 @media (max-height: 830px) and (min-height: 650px) {
@@ -3356,30 +3452,21 @@ li {
   #footer > * {
     zoom: .75;
   }
-  .msie .footer-top {
-    margin-top: 68px;
-  }
-  .msie #footer > hr {
-    margin-top: 45px;
-  }
-  .msie .footer-bottom {
-    margin-top: 30px;
-  }
 }
 @media (max-height: 730px) {
-  .page0 .mymenu {
+  .page0 .full-center-size {
     zoom: 0.6;
   }
-  #introduce_0_image,
+  #page0-bg,
   #page3_ani2_1 {
     background-size: 1323px 744px;
   }
 }
 @media (max-height: 910px) and (min-height: 730px) {
-  .page0 .mymenu {
+  .page0 .full-center-size {
     zoom: 0.75;
   }
-  #introduce_0_image,
+  #page0-bg,
   #page3_ani2_1 {
     background-size: 1920px 1080px;
   }
@@ -3388,64 +3475,10 @@ li {
   .frame .top .right {
     left: 550px;
   }
-  .pagination {
-    left: 974px;
-  }
-}
-.flu-body {
-  height: inherit;
-  overflow: auto;
-  overflow-x: hidden;
-}
-.container {
-  max-width: 1180px;
-  margin-right: auto;
-  margin-left: auto;
-  padding-right: 15px;
-  padding-left: 15px;
 }
 .dishes-container {
   padding-top: 100px;
   padding-bottom: 170px;
-}
-.center-text {
-  text-align: center;
-}
-.btn-ghost {
-  display: inline-block;
-  padding: 15px 40px;
-  color: #423D39;
-  text-align: center;
-  border: 1px solid #d9d9d9;
-  box-sizing: border-box;
-  -webkit-transition: all .3s ease;
-          transition: all .3s ease;
-}
-.btn-ghost:hover {
-  background-color: #ff683c;
-  border: 1px solid #ff683c;
-  color: #fff;
-}
-.clearfix:after {
-  content: ".";
-  display: block;
-  clear: both;
-  visibility: hidden;
-  line-height: 0;
-  height: 0;
-  font-size: 0;
-}
-/*这是针对于IE6的，因为IE6不支持:after伪类，
-这个神奇的zoom:1让IE6的元素可以清除浮动来包裹内部元素。*/
-.clearfix {
-  *zoom: 1;
-}
-.double-underline {
-  position: absolute;
-  width: 100%;
-  top: 7px;
-  border: 0;
-  border-bottom: 4px double #d9d9d9;
 }
 .dishes-channel {
   margin: 20px;
@@ -3498,61 +3531,33 @@ li {
   color: #7a7873;
   background-image: url('../../dist/img/index/btn-sort-down-lg.png');
   -webkit-transition: all .3s;
-          transition: all .3s;
+  transition: all .3s;
 }
 .dishes-channel .dishes-classify .actionable.on {
   color: #423D39;
   background-image: url('../../dist/img/index/btn-sort-up-lg.png');
 }
-.dishes-channel .dishes-classify .classify-list-wrap {
-  display: none;
-}
-.dishes-channel .dishes-classify .classify-list-wrap .classify-list-content {
+.dishes-channel .dishes-classify .classfity-tabs {
   padding-top: 20px;
-  padding-bottom: 20px;
-  color: #7a7873;
-  clear: both;
 }
-.dishes-channel .dishes-classify .classify-list-wrap .classify-list-content .list-part {
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
-.dishes-channel .dishes-classify .classify-list-wrap .classify-list-content .list-part + .list-part {
-  border-top: 1px solid #e1e1e1;
-}
-.dishes-channel .dishes-classify .classify-list-wrap .classify-list-content .list-part h2 {
-  font-size: 1em;
-  float: left;
-  width: 100px;
-  margin-bottom: 12px;
-  margin-top: 12px;
-  text-align: left;
-  font-weight: normal;
-}
-.dishes-channel .dishes-classify .classify-list-wrap .classify-list-content .list-part .list-part-content {
-  overflow: hidden;
-}
-.dishes-channel .dishes-classify .classify-list-wrap .classify-list-content .list-part .list-part-content .list-part-item {
-  float: left;
-}
-.dishes-channel .dishes-classify .classify-list-wrap .classify-list-content .list-part .list-part-content .list-part-item a {
+.dishes-channel .dishes-classify .classfity-tabs .tabs-item {
   display: inline-block;
-  line-height: 1;
-  padding: 10px 0;
-  margin: 4px;
-  width: 80px;
-  text-align: center;
-  outline: none;
-  border: 1px solid #f2efed;
 }
-.dishes-channel .dishes-classify .classify-list-wrap .classify-list-content .list-part .list-part-content .list-part-item a:hover {
-  border: 1px solid #d9d9d9;
-  background-color: #fff;
+.dishes-channel .dishes-classify .classfity-tabs .tabs-item .tab-icon {
+  display: inline-block;
+  width: 60px;
+  height: 60px;
+  margin: 0 5px 5px;
+  background-color: #ccc;
 }
-.dishes-channel .dishes-classify .classify-list-wrap .classify-list-content .list-part .list-part-content .list-part-item.active a {
-  border: 1px solid #ff683c;
-  color: #ff683c;
-  background-color: #fff;
+.dishes-channel .dishes-classify .classfity-tabs .tabs-item .tab-icon:hover {
+  background-color: #000011;
+}
+.dishes-channel .dishes-classify .classfity-tabs .tabs-item p {
+  width: 60px;
+}
+.dishes-channel .dishes-classify .classfity-tabs li.active .tab-icon {
+  background-color: #000011;
 }
 .dishes-channel .dishes-classify .classify-desc {
   margin: 0;
@@ -3565,7 +3570,7 @@ li {
 }
 .dishes-channel .dishes-list .dishes-list-item {
   -webkit-transition: all .3s ease;
-          transition: all .3s ease;
+  transition: all .3s ease;
   float: left;
   width: 23%;
   margin-right: 2%;
@@ -3610,40 +3615,28 @@ li {
   font-size: 25px;
   color: #ff683c;
 }
-.dishes-channel .btn-ghost-more {
-  width: 100%;
-}
-footer {
-  padding-top: 40px;
-  height: 100px;
-  background-color: #5f5f5c;
-}
-footer p {
-  margin-top: 0;
-  margin-bottom: 10px;
-  color: #7a7873;
-}
 .dish-details {
   background: #fff;
 }
-#back-to-top {
-  display: none;
-  position: fixed;
-  bottom: 40px;
-  right: 46px;
-  height: 50px;
-  width: 50px;
-  line-height: 50px;
-  text-align: center;
-  border-radius: 50px;
-  background-color: #aaa;
-  -webkit-transition: background-color 0.3s ease;
-          transition: background-color 0.3s ease;
+.gift-sub-banner {
+  margin-bottom: 40px;
+  border: 1px solid #ccc;
+  font-size: 0;
 }
-#back-to-top img {
-  display: inline-block;
-  line-height: 50px;
+.gift-sub-banner .gift-card {
+  width: 50%;
+  float: left;
 }
-#back-to-top:hover {
-  background-color: #ff683c;
+.gift-sub-banner .gift-card img {
+  width: 100%;
+  min-height: 300px;
+  max-height: 400px;
+}
+.gift-card-list .gift-card {
+  font-size: 0;
+}
+.gift-card-list .gift-card img {
+  width: 100%;
+  min-height: 400px;
+  max-height: 420px;
 }

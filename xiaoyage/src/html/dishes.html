@@ -9,14 +9,14 @@
     <link rel="stylesheet" href="../../dist/css/style.min.css"/>
     <title>菜品页</title>
     <script src="../../dist/js/jquery.min.js"></script>
-    <script src="../../dist/js/navbar_active.js"></script>
+    <script src="../../dist/js/common.js"></script>
     <script src="../../dist/js/dishes.js"></script>
 </head>
-<body class="flu-body" id="navbar">
+<body>
 <input type="hidden" name="whichPages" value="dishesPage"/>
 
 <!--导航条开始-->
-<div class="nav-bar">
+<div class="nav-bar" id="navbar">
     <div class="nav-left">
         <a class="nav-brand" href="javascript:;"><img src="../../dist/img/index/logo.png" alt="小鸭哥logo"/></a>
     </div>
@@ -24,6 +24,7 @@
         <ul class="nav-menu">
             <li id="indexPage"><a href="index.html">主页</a></li>
             <li id="dishesPage"><a href="dishes.html">菜品</a></li>
+            <li id="giftPage"><a href="gift.html">礼物</a></li>
             <li id="dynamicPage"><a href="dynamic.html">动态</a></li>
             <li class="bar"></li>
             <li class="menu-icon-wrap change-menu-icon">
@@ -48,8 +49,8 @@
 <!--导航条结束-->
 <div class="isabelline-bg dishes-channel">
     <div class="top-banner">
-        <div class="banner-content-wrap text-center">
-            <div class="content-box center-text">
+        <div class="banner-content-wrap center-block">
+            <div class="content-box text-center">
                 <h2>将纯洁轻轻地带给你</h2>
 
                 <p>你和贝蒂·克罗克烤糕点，烤得全家乐融融<br/>“酱”出名门，传统好滋味。</p>
@@ -58,71 +59,35 @@
         </div>
     </div>
     <div class="container dishes-container">
-        <div class="dishes-classify center-text">
+        <div class="dishes-classify text-center">
             <a href="javascript:;" class="classify-title actionable">选择分类</a>
             <hr class="double-underline"/>
-            <div class="classify-list-wrap">
-                <ul class="classify-list-content">
-                    <li class="list-part">
-                        <h2>城市</h2>
-                        <ul class="list-part-content">
-                            <li class="list-part-item"><a href="javascript:;">北京</a></li>
-                            <li class="list-part-item active"><a href="javascript:;">北京</a></li>
-                            <li class="list-part-item"><a href="javascript:;">北京</a></li>
-                            <li class="list-part-item"><a href="javascript:;">北京</a></li>
-                            <li class="list-part-item"><a href="javascript:;">北京</a></li>
-                            <li class="list-part-item"><a href="javascript:;">北京</a></li>
-                            <li class="list-part-item"><a href="javascript:;">北京</a></li>
-                            <li class="list-part-item"><a href="javascript:;">北京</a></li>
-                            <li class="list-part-item"><a href="javascript:;">北京</a></li>
-                            <li class="list-part-item"><a href="javascript:;">北京</a></li>
-                            <li class="list-part-item"><a href="javascript:;">北京</a></li>
-                            <li class="list-part-item"><a href="javascript:;">北京</a></li>
-                            <li class="list-part-item"><a href="javascript:;">北京</a></li>
-                            <li class="list-part-item"><a href="javascript:;">北京</a></li>
-                            <li class="list-part-item"><a href="javascript:;">北京</a></li>
-                            <li class="list-part-item"><a href="javascript:;">北京</a></li>
-                            <li class="list-part-item"><a href="javascript:;">北京</a></li>
-                        </ul>
-                    </li>
-                    <li class="list-part">
-                        <h2>城市</h2>
-                        <ul class="list-part-content">
-                            <li class="list-part-item"><a href="javascript:;">北京</a></li>
-                            <li class="list-part-item"><a href="javascript:;">北京</a></li>
-                            <li class="list-part-item"><a href="javascript:;">北京</a></li>
-                            <li class="list-part-item"><a href="javascript:;">北京</a></li>
-                            <li class="list-part-item"><a href="javascript:;">北京</a></li>
-                            <li class="list-part-item"><a href="javascript:;">北京</a></li>
-                            <li class="list-part-item"><a href="javascript:;">北京</a></li>
-                            <li class="list-part-item"><a href="javascript:;">北京</a></li>
-                            <li class="list-part-item"><a href="javascript:;">北京</a></li>
-                            <li class="list-part-item"><a href="javascript:;">北京</a></li>
-                            <li class="list-part-item"><a href="javascript:;">北京</a></li>
-                            <li class="list-part-item"><a href="javascript:;">北京</a></li>
-                            <li class="list-part-item"><a href="javascript:;">北京</a></li>
-                        </ul>
-                    </li>
-                    <li class="list-part">
-                        <h2>城市</h2>
-                        <ul class="list-part-content">
-                            <li class="list-part-item"><a href="javascript:;">北京</a></li>
-                            <li class="list-part-item"><a href="javascript:;">北京</a></li>
-                            <li class="list-part-item"><a href="javascript:;">北京</a></li>
-                            <li class="list-part-item"><a href="javascript:;">北京</a></li>
-                            <li class="list-part-item"><a href="javascript:;">北京</a></li>
-                            <li class="list-part-item"><a href="javascript:;">北京</a></li>
-                            <li class="list-part-item"><a href="javascript:;">北京</a></li>
-                        </ul>
-                    </li>
-                </ul>
-                <p class="classify-desc">中华第一烤鸭店,传承宫廷炉烤鸭技艺</p>
-                <div style="position: relative"><hr class="double-underline" /></div>
+            <ul class="classfity-tabs">
+                <li class="tabs-item active">
+                    <a class="tab-icon tab-icon-1" href="javascript:;" title="分类一"></a>
+                    <p> 分类1 </p>
+                </li>
+                <li class="tabs-item">
+                    <a class="tab-icon tab-icon-2" href="javascript:;" title="分类二"></a>
+                    <p> 分类2 </p>
+                </li>
+                <li class="tabs-item">
+                    <a class="tab-icon tab-icon-3" href="javascript:;" title="分类三"></a>
+                    <p>分类3</p>
+                </li>
+                <li class="tabs-item">
+                    <a class="tab-icon tab-icon-4" href="javascript:;" title="分类四"></a>
+                    <p>分类4</p>
+                </li>
+                <li class="tabs-item">
+                    <a class="tab-icon tab-icon-5" href="javascript:;" title="分类五"></a>
+                    <p>分类5</p>
+                </li>
 
-            </div>
+            </ul>
         </div>
 
-        <ul class="dishes-list center-text"><!--溢出部分补回来-->
+        <ul class="dishes-list text-center clearfix"><!--溢出部分补回来-->
             <li class="dishes-list-item"><!--控制卡片间距-->
                 <div class="list-item-content"><!--背景图边框-->
                     <h3 class="dish-title">辣白菜猪肉饭</h3>
@@ -152,16 +117,6 @@
                 </div>
             </li>
             <li class="dishes-list-item"><!--控制卡片间距-->
-                <a href="dishes-detail.html" class="list-item-content" ><!--背景图边框-->
-                    <h3 class="dish-title">辣白菜猪肉饭</h3>
-
-                    <p class="dish-brief">辣白菜有朝鲜辣酱的独特口味</p>
-                    <img src="http://www.gbtags.com/gb/laitu/170x170&text=菜品图片/555555/ffffff">
-
-                    <p class="price">￥ <span class="price-number">35 </span>/份</p>
-                </a>
-            </li>
-            <li class="dishes-list-item"><!--控制卡片间距-->
                 <a href="dishes-detail.html" class="list-item-content"><!--背景图边框-->
                     <h3 class="dish-title">辣白菜猪肉饭</h3>
 
@@ -231,32 +186,34 @@
                     <p class="price">￥ <span class="price-number">35 </span>/份</p>
                 </a>
             </li>
-            <div class="clearfix"></div>
+            <li class="dishes-list-item"><!--控制卡片间距-->
+                <a href="dishes-detail.html" class="list-item-content"><!--背景图边框-->
+                    <h3 class="dish-title">辣白菜猪肉饭</h3>
+
+                    <p class="dish-brief">辣白菜有朝鲜辣酱的独特口味</p>
+                    <img src="http://www.gbtags.com/gb/laitu/170x170&text=菜品图片/555555/ffffff">
+
+                    <p class="price">￥ <span class="price-number">35 </span>/份</p>
+                </a>
+            </li>
         </ul>
 
-        <a href="javascript:;" class="btn-ghost btn-ghost-more">更多</a>
+        <a href="javascript:;" class="btn-ghost full-width">更多</a>
     </div>
 </div>
-<footer>
+<div class="back-to-top-wrap">
+    <div class="right-text container">
+        <a id="back-to-top" href="javascript:window.scrollTo( 0, 0 );"></a>
+    </div>
+</div>
+<div class="footer">
     <div class="container">
         <p>小鸭哥 版权所有 北京全聚德集团 渝ICP15001803号</p>
 
         <p>TEL:400-066-0244</p>
     </div>
-</footer>
+</div>
 
-<a id="back-to-top" href="javascript:window.scrollTo( 0, 0 );"><img src="../../dist/img/index/arrow_prev_white.png"
-                                                                    alt=""/></a>
-<script>
-    $(document).ready(function () {
-        $(window).bind('scroll', function () {
-            if ($(window).scrollTop() > 500) {
-                $("#back-to-top").slideDown(300);
-            } else {
-                $("#back-to-top").slideUp(300);
-            }
-        });
-    });
-</script>
+
 </body>
 </html>

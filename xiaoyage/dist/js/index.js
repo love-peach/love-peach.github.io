@@ -1,5 +1,5 @@
 /**
- * Created by shaozhenxing on 16-1-12.
+ * Created by zhangjinpei on 16-1-12.
  */
 $(document).ready(function () {
 
@@ -63,8 +63,8 @@ $(document).ready(function () {
 
     //定义页面索引自增函数
     function addScrollIndex() {
-        if (scrollIndex === 5) {
-            scrollIndex = 5;
+        if (scrollIndex === 3) {
+            scrollIndex = 3;
         } else {
             scrollIndex++;
         }
@@ -94,12 +94,12 @@ $(document).ready(function () {
         if (currentPageIndex < scrollIndex) {
             changePages(currentPageIndex, 'up');
             $('.page').not('.page' + currentPageIndex).stop(false, false).animate({opacity: 0}, {duration: 1000}, function () {
-                alert(1)
+                alert(1);
             });
         } else if (currentPageIndex > scrollIndex) {
             changePages(currentPageIndex, 'down');
             $('.page').not('.page' + currentPageIndex).stop(false, false).animate({opacity: 0}, {duration: 1000}, function () {
-                alert(1)
+                alert(1);
             });
         }
 
@@ -151,7 +151,7 @@ $(document).ready(function () {
     //定义首屏屏幕切换和切到首屏的事件
     function changeIndexStyle() {
         if (scrollIndex > 0) {
-            if (scrollIndex === 5) {
+            if (scrollIndex === 3) {
                 $('.btn-next').hide();
             } else {
                 $('.btn-prev').show();
@@ -183,10 +183,10 @@ $(document).ready(function () {
             case 1:
 
                 if (scrollDirection === "down") {
-                    $('.page0').stop(false, false).css({opacity: 1}).animate({opacity: 0}, {duration: 1000, complete: $(this).hide()})//隐藏page0
-                    $('#page1_ani1_1').css({'top': '-100%'}).animate({'top': '0%'}, {duration: 800});
-                    $('#page1_ani1_2').css({'top': -2000}).delay(300).animate({'top': 0}, {duration: 1000});
-                    $('#page1_ani1_3').css({opacity: 1, 'top': '200%'}).delay(300).animate({'top': 0}, {duration: 1000 });
+                    $('.page0').stop(false, false).css({opacity: 1}).animate({opacity: 0}, {duration: 1000, complete: $(this).hide()});//隐藏page0
+                    $('#page1-left1').css({'top': '-100%'}).animate({'top': '0%'}, {duration: 800});
+                    $('#page1-left2').css({'top': -2000}).delay(300).animate({'top': 0}, {duration: 1000});
+                    $('#page1-right').css({opacity: 1, 'top': '200%'}).delay(300).animate({'top': 0}, {duration: 1000 });
                 } else if (scrollDirection === "up") {
                     $('.page2').stop(false, false).css({opacity: 1}).animate({opacity: 0}, {duration: 1000});//隐藏page2
                 }
@@ -202,9 +202,9 @@ $(document).ready(function () {
                 if (scrollDirection === "down") {
                     $('.page1').stop(false, false).animate({opacity: 0}, {duration: 1000});//隐藏page1
 
-                    $('#page2_ani1_1').css({'top': '-100%'}).animate({'top': '0%'}, {duration: 800});
-                    $('#page2_ani1_2').css({'top': -2000}).delay(300).animate({'top': 0}, {duration: 1000});
-                    $('#page2_ani1_3').css({opacity: 1, 'top': '200%'}).delay(300).animate({'top': 0}, {duration: 1000});
+                    $('#page2-left1').css({'top': '-100%'}).animate({'top': '0%'}, {duration: 800});
+                    $('#page2-left2').css({'top': -2000}).delay(300).animate({'top': 0}, {duration: 1000});
+                    $('#page2-right').css({opacity: 1, 'top': '200%'}).delay(300).animate({'top': 0}, {duration: 1000});
                 } else if (scrollDirection === "up") {
                     $('.page3').stop(false, false).css({opacity: 1}).animate({opacity: 0}, {duration: 1000});//隐藏page3
                 }
@@ -217,58 +217,17 @@ $(document).ready(function () {
                 break;
             case 3:
 
-                $('.page3').show().stop(false, false).css({opacity: 0}).animate({opacity: 1}, {duration: 1000});//显示page3
-                if (scrollDirection === "down") {
-                    $('.page2').stop(false, false).css({opacity: 1}).animate({opacity: 0}, {duration: 1000});//隐藏page2
-
-//                    $('#page3_ani1_1').css({'top': '-100%'}).animate({'top': '0%'}, {duration: 800});
-//                    $('#page3_ani1_2').css({'left': -2000}).delay(300).animate({'left': 0}, {duration: 1000});
-//                    $('#page3_ani1_3').css({opacity: 1, 'right': '-200%'}).delay(400).animate({'right': 0}, {duration: 1000});
-                    $("#page3_ani2_1").css({opacity: 1});
-
-                } else if (scrollDirection === "up") {
-                    $('.page4').stop(false, false).css({opacity: 1}).animate({opacity: 0}, {duration: 1000});//隐藏page4
-                }
-
-                $('.pagination-bullet').siblings().removeClass('pagination-bullet-active')
-                    .eq(scrollIndex).addClass('pagination-bullet-active');
-                _isBottom = false;
-                console.log(scrollIndex + scrollDirection);
-                break;
-            case 4:
-
-                $('.page4').show().stop(false, false).css({opacity: 0}).animate({opacity: 1}, {duration: 1000});//显示page4
-                if (scrollDirection === "down") {
-                    $('.page3').stop(false, false).css({opacity: 1}).animate({opacity: 0}, {duration: 1000});//隐藏page3
-
-                    $('#page4_ani1_1').css({'top': '-100%'}).animate({'top': '0%'}, {duration: 800});
-                    $('#page4_ani1_2').css({'top': -2000}).delay(300).animate({'top': 0}, {duration: 1000});
-                    $('.text-content1').css({left: 900}).delay(700).animate({'left': 20}, {duration: 1000});
-                    $('.text-content2').css({left: 900}).delay(900).animate({'left': 50}, {duration: 1000});
-                    $('.text-content3').css({left: 900}).delay(1100).animate({'left': 30}, {duration: 1000});
-                    $('.img-title').css({top: 800}).delay(400).animate({'top': 0}, {duration: 1000});
-                } else if (scrollDirection === "up") {
-                    $('.page5').stop(false, false).css({opacity: 1}).animate({opacity: 0}, {duration: 1000});//隐藏page5
-                }
-
-                $('.pagination-bullet').siblings().removeClass('pagination-bullet-active')
-                    .eq(scrollIndex).addClass('pagination-bullet-active');
-                _isBottom = false;
-                console.log(scrollIndex + scrollDirection);
-                break;
-            case 5:
-
                 if (_isBottom) {
-                    console.log('已经到底部啦！！！')
+                    console.log('已经到底部啦！！！');
                     return;
                 }
-                $('.page4').stop(false, false).css({opacity: 1}).animate({opacity: 0}, {duration: 1000}, removeShowClass());//隐藏page4
+                $('.page2').stop(false, false).css({opacity: 1}).animate({opacity: 0}, {duration: 1000});//隐藏page2
 
-                $('#page5_ani1_1').css({'top': '-100%'}).animate({'top': '0%'}, {duration: 800});
-                $('#page5_ani1_2').css({'top': -2000}).delay(300).animate({'top': 0}, {duration: 1000});
-                $('#page5_ani1_3').css({opacity: 1, 'top': '200%'}).delay(300).animate({'top': 0}, {duration: 1000});
+                $('#page3-left1').css({'top': '-100%'}).animate({'top': '0%'}, {duration: 800});
+                $('#page3-left2').css({'top': -2000}).delay(300).animate({'top': 0}, {duration: 1000});
+                $('#page3-right').css({opacity: 1, 'top': '200%'}).delay(300).animate({'top': 0}, {duration: 1000});
 
-                $('.page5').stop(false, false).css({opacity: 0}).animate({opacity: 1}, {duration: 1000}, addShowClass(scrollIndex));//显示page5
+                $('.page3').stop(false, false).css({opacity: 0}).animate({opacity: 1}, {duration: 1000}, addShowClass(scrollIndex));//显示page3
 
                 $('.pagination-bullet').siblings().removeClass('pagination-bullet-active')
                     .eq(scrollIndex).addClass('pagination-bullet-active');
@@ -276,7 +235,7 @@ $(document).ready(function () {
                 console.log(scrollIndex + scrollDirection);
                 break;
             default:
-                console.log("未知错误")
+                console.log("未知错误");
                 console.log(scrollIndex + scrollDirection);
                 break;
         }
@@ -285,13 +244,12 @@ $(document).ready(function () {
     //定义页面动画执行完后的回调函数
     function addShowClass(scrollIndex) {
         if (scrollIndex >= 0) {
-            $('.page' + scrollIndex).addClass('page-transitioning');
+            $('.page' + scrollIndex).addClass('page-active');
         }
     }
 
     function removeShowClass() {
-        $('.page-transitioning').removeClass('page-transitioning');
+        $('.page-active').removeClass('page-active');
     }
-
 
 });

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="../../favicon.jpg">
+    <link rel="stylesheet" href="../../dist/css/style.min.css"/>
+    <title>礼物</title>
+    <script src="../../dist/js/jquery.min.js"></script>
+    <script src="../../dist/js/common.js"></script>
+</head>
+<body>
+<input type="hidden" name="whichPages" value="giftPage"/>
+
+<!--导航条开始-->
+<div class="nav-bar" id="navbar">
+    <div class="nav-left">
+        <a class="nav-brand" href="javascript:;"><img src="../../dist/img/index/logo.png" alt="小鸭哥logo"/></a>
+    </div>
+    <div class="nav-right">
+        <ul class="nav-menu">
+            <li id="indexPage"><a href="index.html">主页</a></li>
+            <li id="dishesPage"><a href="dishes.html">菜品</a></li>
+            <li id="giftPage"><a href="gift.html">礼物</a></li>
+            <li id="dynamicPage"><a href="dynamic.html">动态</a></li>
+            <li class="bar"></li>
+            <li class="menu-icon-wrap change-menu-icon">
+                <a href="javascript:;">
+                    <img class="menu-icon menu-icon-white" src="../../dist/img/index/icon_weibo.png" alt="官方微博"/>
+                    <img class="menu-icon menu-icon-change" src="../../dist/img/index/icon_weibo_pink.png"
+                         alt="官方微博"/>
+                    官方微博
+                </a>
+            </li>
+            <li class="menu-icon-wrap change-menu-icon">
+                <a href="javascript:;">
+                    <img class="menu-icon menu-icon-white" src="../../dist/img/index/icon_weixin.png" alt="官方微信"/>
+                    <img class="menu-icon menu-icon-change" src="../../dist/img/index/icon_weixin_green.png"
+                         alt="官方微信"/>
+                    官方微信
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+<!--导航条结束-->
+<div class="isabelline-bg dishes-channel">
+    <div class="top-banner">
+        <div class="banner-content-wrap center-block">
+            <div class="content-box text-center">
+                <h2>来自全聚德的礼物</h2>
+
+                <p>选择区域扫描下单，<br/>送餐到家。</p>
+                <a class="btn-ghost" href="javascript:;">查看详情</a>
+            </div>
+        </div>
+    </div>
+    <div class="container dishes-container">
+        <div class="dishes-classify text-center">
+            <a href="javascript:;" class="classify-title actionable">下单让礼品回家</a>
+            <hr class="double-underline"/>
+        </div>
+        <div class="gift-sub-banner clearfix">
+            <div class="gift-card">
+                <img src="http://www.gbtags.com/gb/laitu/&text=礼物图片/ffffff/555555" alt="大礼物"/>
+            </div>
+            <div class="gift-card">
+                <img src="http://www.gbtags.com/gb/laitu/&text=礼物图片/dd4814/ffffff" alt="大礼物"/>
+            </div>
+        </div>
+        <ul class="card-list-quarter gift-card-list text-center clearfix">
+            <li class="list-item">
+                <div class="gift-card">
+                    <img src="http://www.gbtags.com/gb/laitu/&text=礼物图片/e9e9e9/087883" alt=""/>
+                </div>
+            </li>
+            <li class="list-item">
+                <div class="gift-card">
+                    <img src="http://www.gbtags.com/gb/laitu/&text=礼物图片/e9e9e9/087883" alt=""/>
+                </div>
+            </li>
+            <li class="list-item">
+                <div class="gift-card">
+                    <img src="http://www.gbtags.com/gb/laitu/&text=礼物图片/e9e9e9/087883" alt=""/>
+                </div>
+            </li>
+            <li class="list-item">
+                <div class="gift-card">
+                    <img src="http://www.gbtags.com/gb/laitu/&text=礼物图片/e9e9e9/087883" alt=""/>
+                </div>
+            </li>
+            <li class="list-item">
+                <div class="gift-card">
+                    <img src="http://www.gbtags.com/gb/laitu/&text=礼物图片/e9e9e9/087883" alt=""/>
+                </div>
+            </li>
+            <li class="list-item">
+                <div class="gift-card">
+                    <img src="http://www.gbtags.com/gb/laitu/&text=礼物图片/e9e9e9/087883" alt=""/>
+                </div>
+            </li>
+            <li class="list-item">
+                <div class="gift-card">
+                    <img src="http://www.gbtags.com/gb/laitu/&text=礼物图片/e9e9e9/087883" alt=""/>
+                </div>
+            </li>
+            <li class="list-item">
+                <div class="gift-card">
+                    <img src="http://www.gbtags.com/gb/laitu/&text=礼物图片/e9e9e9/087883" alt=""/>
+                </div>
+            </li>
+        </ul>
+        <a href="javascript:;" class="btn-ghost full-width">更多</a>
+    </div>
+</div>
+<div class="footer">
+    <div class="container">
+        <p>小鸭哥 版权所有 北京全聚德集团 渝ICP15001803号</p>
+
+        <p>TEL:400-066-0244</p>
+    </div>
+</div>
+
+<a id="back-to-top" href="javascript:window.scrollTo( 0, 0 );"><img src="../../dist/img/index/arrow_prev_white.png"
+                                                                    alt=""/></a>
+<script>
+    $(document).ready(function () {
+        $(window).bind('scroll', function () {
+            if ($(window).scrollTop() > 500) {
+                $("#back-to-top").slideDown(300);
+            } else {
+                $("#back-to-top").slideUp(300);
+            }
+        });
+    });
+</script>
+</body>
+</html>

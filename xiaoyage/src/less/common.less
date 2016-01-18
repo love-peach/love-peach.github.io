@@ -1,0 +1,315 @@
+.flu-body {
+  height: inherit;
+  overflow: auto;
+  overflow-x: hidden;
+}
+
+.full-screen {
+  //此处原本是使用body,html的，但是这样之后无法监听window.scrollTop()方法;
+  position: relative;
+  height: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.full-width {
+  display: inline-block;
+  width: 100%;
+}
+
+//容器样式
+.container {
+  position: relative;
+  max-width: 1180px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.content-wrap {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: inline-block;
+}
+
+//清楚浮动样式
+.clearfix:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+  font-size: 0;
+}
+
+/*这是针对于IE6的，因为IE6不支持:after伪类，
+这个神奇的zoom:1让IE6的元素可以清除浮动来包裹内部元素。*/
+.clearfix {
+  *zoom: 1;
+}
+
+.fixed {
+  position: fixed;
+  z-index: 9999;
+}
+
+.hidden {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.btn-ghost {
+  display: inline-block;
+  padding: 15px 40px;
+  color: @mainTextColor;
+  text-align: center;
+  border: 1px solid @grayColor;
+  box-sizing: border-box;
+  transition: all .3s ease;
+}
+
+.btn-ghost:hover {
+  background-color: @mainColor;
+  border: 1px solid @mainColor;
+  color: #fff;
+}
+
+//块背景色
+.isabelline-bg {
+  background: @mainBgColor;
+}
+
+//双下划线
+.double-underline {
+  position: absolute;
+  width: 100%;
+  top: 7px;
+  border: 0;
+  border-bottom: 4px double @grayColor;
+}
+
+// 卡片样式，一排四个
+.card-list-quarter {
+  //overflow: hidden;//因为li加了scale动画，此属性遮挡效果。需要在此盒子上添加clearfix类
+  width: 102%;
+  margin-bottom: 35px;
+  box-shadow: 0 0 0 #fff;
+  .list-item {
+    transition: all .3s ease;
+    float: left;
+    width: 23%;
+    margin-right: 2%;
+    margin-bottom: 35px;
+    box-sizing: border-box;
+    &:hover {
+      box-shadow: 0 0 3px #aaa;
+      transform: scale(1.03);
+    }
+  }
+}
+
+//导航条样式
+.nav-bar {
+  width: 100%;
+  position: fixed;
+  z-index: 9999;
+  .nav-left {
+    position: fixed;
+    left: 0;
+    .nav-brand {
+      display: inline-block;
+      width: 124px;
+      height: 39px;
+      padding-top: 40px;
+      padding-left: 50px;
+      img {
+        width: 100%
+      }
+    }
+  }
+  .nav-right {
+    position: fixed;
+    right: 0;
+    .nav-menu {
+      padding-top: 54px;
+      padding-right: 50px;
+      li {
+        float: left;
+        a {
+          padding: 5px 30px;
+          font-size: 14px;
+          -webkit-transition: color .3s ease;
+          transition: color .3s ease;
+        }
+        a:hover {
+          color: @mainColor;
+        }
+      }
+      .active {
+        color: @mainColor;
+      }
+      li.bar {
+        width: 1px;
+        height: 15px;
+        margin-right: 45px;
+        margin-left: 35px;
+        background: #d7d5d2;
+        cursor: initial;
+      }
+      .menu-icon {
+        margin-right: 15px;
+        margin-left: 15px;
+      }
+      .menu-icon-wrap {
+        a {
+          padding: 5px;
+        }
+        .menu-icon-white {
+          display: inline-block;
+        }
+        .menu-icon-change {
+          display: none;
+        }
+      }
+      .change-menu-icon {
+        .menu-icon-white {
+          display: none;
+        }
+        .menu-icon-change {
+          display: inline-block;
+        }
+      }
+    }
+  }
+}
+
+//不浮动的导航条
+.change-nav-bar {
+  width: 100%;
+  position: relative;
+  .nav-left {
+    float: left;
+    left: 0;
+    .nav-brand {
+      display: inline-block;
+      width: 124px;
+      height: 39px;
+      padding-top: 10px;
+      padding-left: 50px;
+      img {
+        width: 100%
+      }
+    }
+  }
+  .nav-right {
+    float: right;
+    right: 0;
+    .nav-menu {
+      padding-top: 20px;
+      padding-right: 50px;
+      li {
+        float: left;
+        a {
+          padding: 5px 30px;
+          font-size: 14px;
+          -webkit-transition: color .3s ease;
+          transition: color .3s ease;
+        }
+        a:hover {
+          color: @mainColor;
+        }
+      }
+      .active {
+        color: @mainColor;
+      }
+      li.bar {
+        width: 1px;
+        height: 15px;
+        margin-right: 45px;
+        margin-left: 35px;
+        background: #d7d5d2;
+        cursor: initial;
+      }
+      .menu-icon {
+        margin-right: 15px;
+        margin-left: 15px;
+      }
+      .menu-icon-wrap {
+        a {
+          padding: 5px;
+        }
+        .menu-icon-white {
+          display: inline-block;
+        }
+        .menu-icon-change {
+          display: none;
+        }
+      }
+      .change-menu-icon {
+        .menu-icon-white {
+          display: none;
+        }
+        .menu-icon-change {
+          display: inline-block;
+        }
+      }
+    }
+  }
+}
+
+//回到顶部样式
+.back-to-top-wrap {
+  position: fixed;
+  z-index: 999;
+  bottom: 40px;
+  width: 100%;
+  .container {
+    padding-right: 35px;
+  }
+  #back-to-top {
+    display: none;
+    height: 50px;
+    width: 50px;
+    line-height: 50px;
+    text-align: center;
+    border-radius: 50px;
+    background: #aaa url('../../dist/img/index/arrow_prev_white.png') no-repeat top 15px center;
+    background-size: 75% auto;
+    transition: background-color .3s ease;
+    img {
+      display: inline-block;
+      line-height: 50px;
+    }
+  }
+  #back-to-top:hover {
+    background-color: @mainColor;
+  }
+}
+
+//底部
+.footer {
+  padding-top: 40px;
+  height: 100px;
+  background-color: #5f5f5c;
+  p {
+    color: @subTextColor;
+  }
+}
