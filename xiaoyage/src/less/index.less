@@ -11,13 +11,13 @@
     margin: 15px 0;
     width: 5px;
     height: 5px;
-    border: 1px solid @mainTextColor;
+    border: 1px solid @text-color;
     border-radius: 10px;
-    background-color: @mainTextColor;
+    background-color: @text-color;
     cursor: pointer;
   }
   .pagination-bullet-active {
-    border: 1px solid @mainTextColor;
+    border: 1px solid @text-color;
     border-radius: 10px;
     background-color: transparent;
   }
@@ -96,14 +96,17 @@
 }
 
 .section-title {
-  color: @mainTextColor;
-  font-size: 24px;
+  color: @text-color;
+  font-size: 30px;
   margin-top: 0;
   margin-bottom: 0;
+  img {
+    margin: 30px 0 40px;
+  }
 }
 
 .img-placeholder {
-  height: 90px;
+  height: 80px;
   padding: 10px;
   margin-bottom: 20px;
   border-bottom: 2px solid #e4e1dc;
@@ -115,14 +118,14 @@
 .section-text {
   margin-top: 0;
   margin-bottom: 10px;
-  color: @subTextColor;
+  color: @text-color;
 
 }
 
 .img-erweima-wrap {
   display: inline-block;
-  padding: 10px;
-  border: 2px solid #dadada;
+  border: 1px solid @border-color;
+  font-size: 0;
   .img-erweima {
     min-height: 110px;
   }
@@ -132,13 +135,15 @@
   font-size: 20px;
   text-align: left;
   li {
-    padding: 5px;
-    margin-bottom: 5px;
+    padding: 7px 5px;
     border-bottom: 1px solid #e6e1dd;
     white-space: nowrap;
     .contact-icon {
+      position: relative;
+      top: 5px;
       margin-right: 20px;
     }
+
   }
 
 }
@@ -204,8 +209,8 @@
   width: 370px;
   min-height: 348px;
   max-height: 348px;
-  padding: 50px 50px 70px;
-  color: @mainTextColor;
+  padding: 40px 50px 80px;
+  color: @text-color;
   line-height: 1.6;
   text-align: center;
 }
@@ -280,7 +285,7 @@
 .text-content2 {
   left: 50px;
   font-size: 20px;
-  color: @mainTextColor;
+  color: @text-color;
 }
 
 .text-content3 {
@@ -325,15 +330,15 @@
   }
 }
 
-@media (max-height: 830px) and (min-height: 650px) {
-  .section-right > *, .text-box, .btn-prev, .btn-next, #footer > * {
-    zoom: .75;
-  }
-}
+
 
 @media (max-height: 730px) {
   .page0 .full-center-size {
     zoom: 0.6
+  }
+  .img-placeholder {
+    height: 50px;
+    margin-bottom: 10px;
   }
 
   #page0-bg, #page3_ani2_1, {
@@ -354,5 +359,15 @@
 @media (max-width: 1024px) {
   .frame .top .right {
     left: 550px;
+  }
+}
+
+@media (max-height: 830px) and (min-height: 650px) {
+  .section-right > *, .text-box, .btn-prev, .btn-next, #footer > * {
+    zoom: .75;
+  }
+  .img-placeholder {
+    height: 70px;
+    margin-bottom: 20px;
   }
 }

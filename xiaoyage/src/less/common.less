@@ -26,6 +26,12 @@
   padding-right: 15px;
   padding-left: 15px;
 }
+.row{
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
+
 
 .content-wrap {
   width: 100%;
@@ -79,9 +85,9 @@
 .btn-ghost {
   display: inline-block;
   padding: 15px 40px;
-  color: @mainTextColor;
+  color: @text-btn;
   text-align: center;
-  border: 1px solid @grayColor;
+  border: 1px solid @border-color;
   box-sizing: border-box;
   transition: all .3s ease;
 }
@@ -93,8 +99,8 @@
 }
 
 //块背景色
-.isabelline-bg {
-  background: @mainBgColor;
+.block-bg {
+  background: @gray-color;
 }
 
 //双下划线
@@ -103,7 +109,7 @@
   width: 100%;
   top: 7px;
   border: 0;
-  border-bottom: 4px double @grayColor;
+  border-bottom: 4px double @border-color;
 }
 
 // 卡片样式，一排四个
@@ -123,6 +129,47 @@
       box-shadow: 0 0 3px #aaa;
       transform: scale(1.03);
     }
+  }
+}
+
+//子页面公用的头部
+.top-banner {
+  position: relative;
+  height: 580px;
+  width: 100%;
+  //以下background属性不能合并，不然
+  background: no-repeat url('../../dist/img/index/iphone_content3.png') center top;
+//  background-attachment: fixed;
+  background-size: 100% auto;
+  .banner-content-wrap {
+    width: 580px;
+    height: 310px;
+    margin: auto auto;
+    padding: 5px;
+    background-color: #fff;
+    .content-box {
+      height: 100%;
+      border: 1px solid @grayColor;
+      h2 {
+        color: @text-title;
+        font-weight: normal;
+        font-size: 40px;
+        margin-top: 40px;
+        margin-bottom: 40px;
+      }
+      p {
+        color: @text-dec;
+        line-height: 1.6;
+        font-size: 16px;
+        margin-bottom: 25px;
+      }
+    }
+  }
+}
+
+@media screen and  (max-width: 1036px) {
+  div.top-banner {
+    background-size: auto 100%;
   }
 }
 
@@ -160,11 +207,11 @@
           transition: color .3s ease;
         }
         a:hover {
-          color: @mainColor;
+          color: @active-color;
         }
       }
       .active {
-        color: @mainColor;
+        color: @active-color;
       }
       li.bar {
         width: 1px;
@@ -245,7 +292,7 @@
         height: 15px;
         margin-right: 45px;
         margin-left: 35px;
-        background: #d7d5d2;
+        background: @border-color;
         cursor: initial;
       }
       .menu-icon {
@@ -278,11 +325,11 @@
 //回到顶部样式
 .back-to-top-wrap {
   position: fixed;
-  z-index: 999;
+  z-index: 99;
   bottom: 40px;
   width: 100%;
   .container {
-    padding-right: 35px;
+    padding-right: 20px;
   }
   #back-to-top {
     display: none;
@@ -291,7 +338,7 @@
     line-height: 50px;
     text-align: center;
     border-radius: 50px;
-    background: #aaa url('../../dist/img/index/arrow_prev_white.png') no-repeat top 15px center;
+    background: @arrow-bg url('../../dist/img/index/arrow_prev_white.png') no-repeat top 15px center;
     background-size: 75% auto;
     transition: background-color .3s ease;
     img {
@@ -300,7 +347,7 @@
     }
   }
   #back-to-top:hover {
-    background-color: @mainColor;
+    background-color: @active-color;
   }
 }
 
@@ -308,8 +355,8 @@
 .footer {
   padding-top: 40px;
   height: 100px;
-  background-color: #5f5f5c;
+  background-color: @footer-bg;
   p {
-    color: @subTextColor;
+    color: @gray-color;
   }
 }

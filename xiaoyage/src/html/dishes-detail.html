@@ -46,9 +46,9 @@
     <div class="clearfix"></div>
 </div>
 <!--导航条结束-->
-<div class="isabelline-bg dishes-channel">
+<div class="block-bg dishes-channel">
     <div class="container dishes-container">
-        <div class="dishes-classify center-text">
+        <div class="dishes-classify text-center">
             <a href="javascript:;" class="classify-title">选择分类</a>
             <hr class="double-underline"/>
         </div>
@@ -66,38 +66,10 @@
     </div>
 </div>
 
-<a id="back-to-top" href="javascript:window.scrollTo( 0, 0 );"><img src="../../dist/img/index/arrow_prev_white.png"
-                                                                    alt=""/></a>
-<script>
-    $(document).ready(function () {
-
-//        var scrollFunc = function () {
-//            console.log($('#navbar').scrollTop());
-//            if ($('#navbar').scrollTop() > 500 ) {
-//                $("#back-to-top").slideDown(300);
-//            } else {
-//                $("#back-to-top").slideUp(300);
-//            }
-//        };
-//
-//        //给页面绑定滑轮滚动事件
-//        if (document.addEventListener) {//firefox
-//            document.addEventListener('DOMMouseScroll', scrollFunc, false);
-//        }
-//        //滚动滑轮触发scrollFunc方法  //ie 谷歌
-//        window.onmousewheel = document.onmousewheel;
-//        document.onmousewheel = scrollFunc;
-
-
-        $(window).bind('scroll', function () {
-//            console.log($('#navbar').scrollTop());
-            if ($(window).scrollTop() > 500) {
-                $("#back-to-top").slideDown(300);
-            } else {
-                $("#back-to-top").slideUp(300);
-            }
-        });
-    });
-</script>
+<div class="back-to-top-wrap">
+    <div class="text-right container">
+        <a id="back-to-top" href="javascript:window.scrollTo( 0, 0 );"></a>
+    </div>
+</div>
 </body>
 </html>

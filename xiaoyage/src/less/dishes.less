@@ -6,203 +6,125 @@
 //菜品频道样式
 .dishes-channel {
   margin: 20px;
-  font-family: arial, 'Microsoft Yahei', '微软雅黑';
   .top-banner {
+    background-image: url('../../dist/img/index/iphone_content3.png');
+  }
+}
+
+
+//菜品分类标题样式
+.dishes-classify {
+  position: relative;
+  padding-bottom: 50px;
+  .classify-title {
+    display: inline-block;
     position: relative;
-    height: 580px;
-    width: 100%;
-    background: url('../../dist/img/index/iphone_content3.png');
-    background-size: 1920px 1080px;
-    .banner-content-wrap {
-      width: 580px;
-      height: 310px;
-      margin: auto auto;
-      padding: 5px;
-      background-color: #fff;
-      .content-box {
-        height: 100%;
-        border: 1px solid @grayColor;
-        h2 {
-          color: @mainTextColor;
-          font-weight: normal;
-          font-size: 40px;
-          margin-top: 40px;
-          margin-bottom: 40px;
-        }
-        p {
-          color: @subTextColor;
-          line-height: 1.6;
-          font-size: 16px;
-          margin-bottom: 25px;
-        }
+    z-index: 10;
+    padding-right: 90px;
+    padding-left: 50px;
+    font-size: 24px;
+    background: @gray-color 80% 50% no-repeat;
+
+  }
+  .actionable {
+    color: @text-dec;
+    background-image: url('../../dist/img/index/btn-sort-down-lg.png');
+    transition: all .3s;
+  }
+  .actionable.on {
+    color: @text-color;
+    background-image: url('../../dist/img/index/btn-sort-up-lg.png');
+
+  }
+}
+
+//分类列表选项卡按钮样式
+.classfity-tabs {
+  padding-top: 50px;
+  .tabs-item {
+    display: inline-block;
+    margin-right: 5px;
+    margin-left: 5px;
+    .tab-icon {
+      display: inline-block;
+      width: 60px;
+      height: 60px;
+      margin: 0 5px 5px;
+      background-color: #ccc;
+    }
+    .tab-icon:hover {
+    }
+    .tab-icon-1 {
+      background: url('../../dist/img/dishes/icon_western.png') no-repeat center center;
+    }
+    .tab-icon-2 {
+      background: url('../../dist/img/dishes/icon_chinese_food.png') no-repeat center center;
+    }
+    .tab-icon-3 {
+      background: url('../../dist/img/dishes/icon_cold_dish.png') no-repeat center center;
+    }
+    .tab-icon-4 {
+      background: url('../../dist/img/dishes/icon_cake.png') no-repeat center center;
+    }
+    .tab-icon-5 {
+      background: url('../../dist/img/dishes/icon_drink.png') no-repeat center center;
+    }
+  }
+  li.active {
+    .tab-icon {
+
+    }
+  }
+}
+
+//菜品卡片列表样式
+.dishes-card-list {
+
+  .list-item {
+    padding: 80px 10px 40px;
+    background: @dshed-card-bg url('../../dist/img/index/card_border.png') no-repeat center center;
+    background-size: 100% 100%;
+    box-sizing: border-box;
+    .dishes-card {
+      display: block;
+
+    }
+    .dish-title {
+      margin: 0 0 10px;
+      color: @text-color;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .dish-brief {
+      margin: 0 0 20px;
+      color: @text-dec;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .dish-img {
+      margin-bottom: 10px;
+    }
+    .dish-price {
+      color: @text-dec;
+      .price-number {
+        font-size: 25px;
+        color: @active-color;
       }
     }
   }
-
-  //菜品分类样式
-  .dishes-classify {
-    position: relative;
-    padding-bottom: 120px;
-    .classify-title {
-      position: relative;
-      z-index: 10;
-      padding-right: 90px;
-      padding-left: 50px;
-      font-size: 24px;
-      background: @mainBgColor 80% 50% no-repeat;
-
+  .particular-card {
+    background: @dshed-card-bg url('../../dist/img/dishes/dishes-img1.png') no-repeat center top;
+    .dish-logo {
+      height: 35px;
+      margin-bottom: 40px;
     }
-    .actionable {
-      color: @subTextColor;
-      background-image: url('../../dist/img/index/btn-sort-down-lg.png');
-      transition: all .3s;
+    .dish-erweima-text {
+      margin-bottom: 0;
     }
-    .actionable.on {
-      color: @mainTextColor;
-      background-image: url('../../dist/img/index/btn-sort-up-lg.png');
-
-    }
-    //分类列表按钮样式
-    .classfity-tabs {
-      padding-top: 20px;
-      .tabs-item {
-        display: inline-block;
-        .tab-icon {
-          display: inline-block;
-          width: 60px;
-          height: 60px;
-          margin: 0 5px 5px;
-          background-color: #ccc;
-        }
-        .tab-icon:hover{
-          background-color: #000011;
-        }
-        p {
-          width: 60px;
-
-        }
-      }
-      li.active {
-        .tab-icon {
-          background-color: #000011;
-        }
-      }
-    }
-//    .classify-list-wrap {
-//      display: none;
-//      .classify-list-content {
-//        padding-top: 20px;
-//        padding-bottom: 20px;
-//        color: @subTextColor;
-//        clear: both;
-//        .list-part {
-//          padding-top: 10px;
-//          padding-bottom: 10px;
-//          + .list-part {
-//            border-top: 1px solid #e1e1e1;
-//          }
-//          h2 {
-//            font-size: 1em;
-//            float: left;
-//            width: 100px;
-//            margin-bottom: 12px;
-//            margin-top: 12px;
-//            text-align: left;
-//            font-weight: normal;
-//          }
-//          .list-part-content {
-//            overflow: hidden;
-//            .list-part-item {
-//              float: left;
-//              a {
-//                display: inline-block;
-//                line-height: 1;
-//                padding: 10px 0;
-//                margin: 4px;
-//                width: 80px;
-//                text-align: center;
-//                outline: none;
-//                border: 1px solid @mainBgColor;
-//              }
-//              a:hover {
-//                border: 1px solid @grayColor;
-//                background-color: #fff;
-//              }
-//            }
-//            .list-part-item.active a {
-//              border: 1px solid @mainColor;
-//              color: @mainColor;
-//              background-color: #fff;
-//            }
-//          }
-//        }
-//      }
-//    }
-    .classify-desc {
-      margin: 0;
-      color: @mainTextColor;
-    }
-  }
-
-  //菜品卡片列表样式
-  .dishes-list {
-//    overflow: hidden;因为加了clearfix空标签，所以干掉之
-    width: 102%;
-    margin-bottom: 35px;
-    box-shadow: 0 0 0 #fff;
-    .dishes-list-item {
-      &:hover {
-        box-shadow: 0 0 3px #aaa;
-        transform: scale(1.03);
-      }
-      transition: all .3s ease;
-      float: left;
-      width: 23%;
-      margin-right: 2%;
-      margin-bottom: 35px;
-      //      padding: 10px;
-      //      border: 1px solid @grayColor;
-
-      background: url('../../dist/img/index/card_border.png') no-repeat center center;
-      background-size: 100% 100%;
-      //      background-color: #fbfbfb;
-
-      box-sizing: border-box;
-      .list-item-content {
-        //        background: url('../../dist/img/index/card_border.png') no-repeat center center;
-        //        background-size: 100% 100%;
-        display: block;
-        //        padding-top: 70px;
-        //        padding-bottom: 20px;
-        padding: 80px 10px 40px;
-        a {
-          display: block;
-        }
-        .dish-title {
-          margin: 0 0 10px;
-          color: @mainTextColor;
-          overflow: hidden;
-          text-overflow: ellipsis;
-          white-space: nowrap;
-        }
-        .dish-brief {
-          margin: 0 0 20px;
-          color: @subTextColor;
-          overflow: hidden;
-          text-overflow: ellipsis;
-          white-space: nowrap;
-        }
-        .dish-img {
-          min-height: 170px;
-        }
-        .price {
-          color: @subTextColor;
-          .price-number {
-            font-size: 25px;
-            color: @mainColor;
-          }
-        }
-      }
+    .dish-erweima {
+      margin-bottom: 17px;
     }
   }
 }
