@@ -26,12 +26,11 @@
   padding-right: 15px;
   padding-left: 15px;
 }
-.row{
+
+.row {
   margin-left: -15px;
   margin-right: -15px;
 }
-
-
 
 .content-wrap {
   width: 100%;
@@ -105,21 +104,20 @@
 
 //双下划线
 .double-underline {
-  position: absolute;
+  position: relative;
   width: 100%;
-  top: 7px;
+  top: -25px;
   border: 0;
   border-bottom: 4px double @border-color;
 }
 
 // 卡片样式，一排四个
 .card-list-quarter {
-  //overflow: hidden;//因为li加了scale动画，此属性遮挡效果。需要在此盒子上添加clearfix类
+  overflow: hidden;
   width: 102%;
   margin-bottom: 35px;
   box-shadow: 0 0 0 #fff;
   .list-item {
-    transition: all .3s ease;
     float: left;
     width: 23%;
     margin-right: 2%;
@@ -127,19 +125,26 @@
     box-sizing: border-box;
     &:hover {
       box-shadow: 0 0 3px #aaa;
-      transform: scale(1.03);
     }
   }
 }
 
-//子页面公用的头部
+//子页面相同的容器样式
+.pages-container {
+  padding-top: 100px;
+  padding-bottom: 170px;
+}
+
+.white-space {
+  margin: 20px;
+}
+
+//子页面相同的头部banner样式
 .top-banner {
   position: relative;
   height: 580px;
   width: 100%;
-  //以下background属性不能合并，不然
   background: no-repeat url('../../dist/img/index/iphone_content3.png') center top;
-//  background-attachment: fixed;
   background-size: 100% auto;
   .banner-content-wrap {
     width: 580px;
@@ -147,6 +152,7 @@
     margin: auto auto;
     padding: 5px;
     background-color: #fff;
+    overflow: hidden;
     .content-box {
       height: 100%;
       border: 1px solid @grayColor;
@@ -165,6 +171,21 @@
       }
     }
   }
+}
+
+//子页面相同的提示标题样式
+.subpage-title-wrap {
+  padding-bottom: 50px;
+}
+
+.subpage-title {
+  display: inline-block;
+  position: relative;
+  z-index: 10;
+  padding-right: 90px;
+  padding-left: 50px;
+  font-size: 24px;
+  background: @gray-color 80% 50% no-repeat;
 }
 
 @media screen and  (max-width: 1036px) {
@@ -226,6 +247,7 @@
         margin-left: 15px;
       }
       .menu-icon-wrap {
+        position: relative;
         a {
           padding: 5px;
         }
@@ -300,6 +322,7 @@
         margin-left: 15px;
       }
       .menu-icon-wrap {
+        position: relative;
         a {
           padding: 5px;
         }
@@ -319,6 +342,17 @@
         }
       }
     }
+  }
+}
+
+//下拉二维码样式
+.slide-erweima {
+  display: none;
+  position: absolute;
+  top: 23px;
+  right: -10px;
+  img {
+    width: 120px;
   }
 }
 

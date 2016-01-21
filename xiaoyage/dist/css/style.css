@@ -2963,20 +2963,19 @@ a {
   background: #f1f0e9;
 }
 .double-underline {
-  position: absolute;
+  position: relative;
   width: 100%;
-  top: 7px;
+  top: -25px;
   border: 0;
   border-bottom: 4px double #d6d6d0;
 }
 .card-list-quarter {
+  overflow: hidden;
   width: 102%;
   margin-bottom: 35px;
   box-shadow: 0 0 0 #fff;
 }
 .card-list-quarter .list-item {
-  -webkit-transition: all .3s ease;
-  transition: all .3s ease;
   float: left;
   width: 23%;
   margin-right: 2%;
@@ -2985,8 +2984,13 @@ a {
 }
 .card-list-quarter .list-item:hover {
   box-shadow: 0 0 3px #aaa;
-  -webkit-transform: scale(1.03);
-          transform: scale(1.03);
+}
+.pages-container {
+  padding-top: 100px;
+  padding-bottom: 170px;
+}
+.white-space {
+  margin: 20px;
 }
 .top-banner {
   position: relative;
@@ -3001,6 +3005,7 @@ a {
   margin: auto auto;
   padding: 5px;
   background-color: #fff;
+  overflow: hidden;
 }
 .top-banner .banner-content-wrap .content-box {
   height: 100%;
@@ -3018,6 +3023,18 @@ a {
   line-height: 1.6;
   font-size: 16px;
   margin-bottom: 25px;
+}
+.subpage-title-wrap {
+  padding-bottom: 50px;
+}
+.subpage-title {
+  display: inline-block;
+  position: relative;
+  z-index: 10;
+  padding-right: 90px;
+  padding-left: 50px;
+  font-size: 24px;
+  background: #f1f0e9 80% 50% no-repeat;
 }
 @media screen and (max-width: 1036px) {
   div.top-banner {
@@ -3077,6 +3094,9 @@ a {
 .nav-bar .nav-right .nav-menu .menu-icon {
   margin-right: 15px;
   margin-left: 15px;
+}
+.nav-bar .nav-right .nav-menu .menu-icon-wrap {
+  position: relative;
 }
 .nav-bar .nav-right .nav-menu .menu-icon-wrap a {
   padding: 5px;
@@ -3146,6 +3166,9 @@ a {
   margin-right: 15px;
   margin-left: 15px;
 }
+.change-nav-bar .nav-right .nav-menu .menu-icon-wrap {
+  position: relative;
+}
 .change-nav-bar .nav-right .nav-menu .menu-icon-wrap a {
   padding: 5px;
 }
@@ -3160,6 +3183,15 @@ a {
 }
 .change-nav-bar .nav-right .nav-menu .change-menu-icon .menu-icon-change {
   display: inline-block;
+}
+.slide-erweima {
+  display: none;
+  position: absolute;
+  top: 23px;
+  right: -10px;
+}
+.slide-erweima img {
+  width: 120px;
 }
 .back-to-top-wrap {
   position: fixed;
@@ -3528,38 +3560,11 @@ a {
     margin-bottom: 20px;
   }
 }
-.dishes-container {
-  padding-top: 100px;
-  padding-bottom: 170px;
-}
-.dishes-channel {
-  margin: 20px;
-}
 .dishes-channel .top-banner {
   background-image: url('../../dist/img/index/iphone_content3.png');
 }
-.dishes-classify {
-  position: relative;
-  padding-bottom: 50px;
-}
-.dishes-classify .classify-title {
-  display: inline-block;
-  position: relative;
-  z-index: 10;
-  padding-right: 90px;
-  padding-left: 50px;
-  font-size: 24px;
-  background: #f1f0e9 80% 50% no-repeat;
-}
-.dishes-classify .actionable {
-  color: #92998d;
+.dishes-classify .title-icon {
   background-image: url('../../dist/img/index/btn-sort-down-lg.png');
-  -webkit-transition: all .3s;
-  transition: all .3s;
-}
-.dishes-classify .actionable.on {
-  color: #333;
-  background-image: url('../../dist/img/index/btn-sort-up-lg.png');
 }
 .classfity-tabs {
   padding-top: 50px;
@@ -3592,50 +3597,65 @@ a {
   background: url('../../dist/img/dishes/icon_drink.png') no-repeat center center;
 }
 .dishes-card-list .list-item {
-  padding: 80px 10px 40px;
-  background: #fbfbf6 url('../../dist/img/index/card_border.png') no-repeat center center;
-  background-size: 100% 100%;
   box-sizing: border-box;
 }
 .dishes-card-list .list-item .dishes-card {
   display: block;
+  position: relative;
+  overflow: hidden;
 }
-.dishes-card-list .list-item .dish-title {
+.dishes-card-list .list-item .dishes-card:hover .hover-card {
+  top: 0;
+}
+.dishes-card-list .static-card {
+  padding: 80px 10px 40px;
+  background: #fbfbf6 url('../../dist/img/index/card_border.png') no-repeat center center;
+  background-size: 100% 100%;
+}
+.dishes-card-list .static-card .dish-title {
   margin: 0 0 10px;
   color: #333;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-.dishes-card-list .list-item .dish-brief {
+.dishes-card-list .static-card .dish-brief {
   margin: 0 0 20px;
   color: #92998d;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-.dishes-card-list .list-item .dish-img {
+.dishes-card-list .static-card .dish-img {
   margin-bottom: 10px;
 }
-.dishes-card-list .list-item .dish-price {
+.dishes-card-list .static-card .dish-price {
   color: #92998d;
 }
-.dishes-card-list .list-item .dish-price .price-number {
+.dishes-card-list .static-card .dish-price .price-number {
   font-size: 25px;
   color: #f34537;
 }
-.dishes-card-list .particular-card {
+.dishes-card-list .hover-card {
+  position: absolute;
+  top: 100%;
+  z-index: 99;
+  width: 100%;
+  padding: 80px 0 40px;
   background: #fbfbf6 url('../../dist/img/dishes/dishes-img1.png') no-repeat center top;
+  background-size: auto 100%;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
 }
-.dishes-card-list .particular-card .dish-logo {
+.dishes-card-list .hover-card .dish-logo {
   height: 35px;
   margin-bottom: 40px;
 }
-.dishes-card-list .particular-card .dish-erweima-text {
+.dishes-card-list .hover-card .dish-erweima-text {
   margin-bottom: 0;
 }
-.dishes-card-list .particular-card .dish-erweima {
-  margin-bottom: 17px;
+.dishes-card-list .hover-card .dish-erweima {
+  margin-bottom: 28px;
 }
 .dish-details {
   background: #fff;
@@ -3738,6 +3758,30 @@ a {
 }
 .dynamic-model-content .dynamic-details .content img {
   width: 80%;
+}
+.gift-top .top-banner {
+  background-image: url(../../dist/img/gift/gift_top_banner.png);
+  background-position: right 100%;
+  background-color: #ebebeb;
+  background-size: auto 100%;
+}
+.gift-slide-down {
+  position: absolute;
+  top: -100%;
+  left: 5px;
+  width: 578px;
+  height: 310px;
+  border: 1px solid #d6d6d0;
+  background-color: #f1f0e9;
+  -webkit-transition: top .3s ease;
+  transition: top .3s ease;
+}
+.gift-slide-down p {
+  margin-top: 50px;
+  margin-bottom: 40px;
+}
+.gift-sub-title .title-icon {
+  background-image: url('../../dist/img/gift/icon_gift.png');
 }
 .gift-sub-banner {
   margin-bottom: 40px;

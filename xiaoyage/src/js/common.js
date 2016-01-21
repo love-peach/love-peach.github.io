@@ -2,32 +2,12 @@
  * Created by zhangjinpei on 16-1-14.
  */
 $(document).ready(function () {
-    //选择分类，下拉列表
-    $('.classify-title.actionable').on('click', function () {
-        if (!$(this).hasClass('on')) {
-            $(this).addClass('on');
-            $('.classify-list-wrap').slideDown(300);
-        } else {
-            $(this).removeClass('on');
-            $('.classify-list-wrap').slideUp(300);
-        }
 
-    });
-
-    //回到顶部
-    $(window).bind('scroll', function () {
-        if ($(window).scrollTop() > 500) {
-            $("#back-to-top").slideDown(300);
-        } else {
-            $("#back-to-top").slideUp(300);
-        }
-    });
 
     //导航条对应菜单高亮
     autoActive('whichPages', 'navbar');
     function autoActive(flagName, navbarId) {
         var pagesValueArray = creadNavArray(navbarId);
-        console.log(pagesValueArray);
         autoAddClass(flagName, pagesValueArray);
     }
 
@@ -52,4 +32,22 @@ $(document).ready(function () {
         }
         return navArray;
     }
+
+    //导航栏鼠标悬停显示二维码
+    $('.slide-erweima-wrap').hover(function () {
+        $('.slide-erweima').stop(false,true).slideDown(300);
+    },function () {
+        $('.slide-erweima').stop(true,false).slideUp(300);
+    });
+
+
+
+    //回到顶部
+    $(window).bind('scroll', function () {
+        if ($(window).scrollTop() > 500) {
+            $("#back-to-top").slideDown(300);
+        } else {
+            $("#back-to-top").slideUp(300);
+        }
+    });
 });

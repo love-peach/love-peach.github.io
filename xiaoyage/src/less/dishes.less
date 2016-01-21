@@ -1,40 +1,16 @@
-.dishes-container {
-  padding-top: 100px;
-  padding-bottom: 170px;
-}
+
 
 //菜品频道样式
 .dishes-channel {
-  margin: 20px;
   .top-banner {
     background-image: url('../../dist/img/index/iphone_content3.png');
   }
 }
 
-
 //菜品分类标题样式
 .dishes-classify {
-  position: relative;
-  padding-bottom: 50px;
-  .classify-title {
-    display: inline-block;
-    position: relative;
-    z-index: 10;
-    padding-right: 90px;
-    padding-left: 50px;
-    font-size: 24px;
-    background: @gray-color 80% 50% no-repeat;
-
-  }
-  .actionable {
-    color: @text-dec;
+  .title-icon {
     background-image: url('../../dist/img/index/btn-sort-down-lg.png');
-    transition: all .3s;
-  }
-  .actionable.on {
-    color: @text-color;
-    background-image: url('../../dist/img/index/btn-sort-up-lg.png');
-
   }
 }
 
@@ -79,16 +55,21 @@
 
 //菜品卡片列表样式
 .dishes-card-list {
-
   .list-item {
-    padding: 80px 10px 40px;
-    background: @dshed-card-bg url('../../dist/img/index/card_border.png') no-repeat center center;
-    background-size: 100% 100%;
     box-sizing: border-box;
     .dishes-card {
       display: block;
-
+      position: relative;
+      overflow: hidden;
     }
+    .dishes-card:hover .hover-card {
+      top: 0;
+    }
+  }
+  .static-card {
+    padding: 80px 10px 40px;
+    background: @dshed-card-bg url('../../dist/img/index/card_border.png') no-repeat center center;
+    background-size: 100% 100%;
     .dish-title {
       margin: 0 0 10px;
       color: @text-color;
@@ -114,8 +95,15 @@
       }
     }
   }
-  .particular-card {
+  .hover-card {
+    position: absolute;
+    top: 100%;
+    z-index: 99;
+    width: 100%;
+    padding: 80px 0 40px;
     background: @dshed-card-bg url('../../dist/img/dishes/dishes-img1.png') no-repeat center top;
+    background-size:auto 100%;
+    transition: all .3s ease;
     .dish-logo {
       height: 35px;
       margin-bottom: 40px;
@@ -124,7 +112,7 @@
       margin-bottom: 0;
     }
     .dish-erweima {
-      margin-bottom: 17px;
+      margin-bottom: 28px;
     }
   }
 }
