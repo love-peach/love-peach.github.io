@@ -1,5 +1,7 @@
 
 .dynamic-top {
+  overflow: hidden;
+  position: relative;
   .top-banner {
     background-image: url('../../dist/img/dynamic/dynamic_banner.jpg');
     background-size: auto 100%;
@@ -37,37 +39,37 @@
   }
 }
 
-//弹出层样式
-.model-mask {
-  display: none;
-  position: fixed;
-  top: 0;
-  bottom: 0;
+.dynamic-model {
+  position: absolute;
+  top: 100%;
   right: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
   z-index: 999;
-  opacity: 0.7;
-  background-color: #000;
-}
-
-.model-content {
-  display: none;
-  position: fixed;
-  z-index: 1000;
-  padding: 20px;
-  top: 50%;
-  left: 50%;
-  margin-top: -100px;
-  margin-left: -100px;
-  background-color: #fff;
-  .model-erweima {
-    margin-bottom: 10px;
-    border: 1px solid @border-color;
+  width: 100%;
+  transition: all .5s ease;
+  .model-mask {
+    height: 580px;
+    background-color: #000;
+    opacity: 0.7;
+    filter: alpha(opacity=70);
   }
-
+  .model-close {
+    position: absolute;
+    top: 500px;
+    right: 40px;
+    z-index: 1000;
+    width: 40px;
+    cursor: pointer;
+  }
+  .model-content {
+    height: 100%;
+    padding: 50px 0;
+    background-color: #fff;
+    p {
+      text-indent: 2em;
+    }
+  }
 }
+
 
 //关闭按钮样式
 .close-model {
