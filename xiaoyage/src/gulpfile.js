@@ -13,13 +13,13 @@
         concat = require('gulp-concat'),           // 合并文件
         rename = require('gulp-rename'),           // 重命名
         imagemin = require('gulp-imagemin'),       // 图片压缩
-        pngquant = require('imagemin-pngquant'),
+        pngquant = require('imagemin-pngquant'),   //深度压缩png图片的imagemin插件
         changed = require('gulp-changed'),         // 过滤改动的文件
         clean = require('gulp-clean'),             // 清空文件夹
         notify = require('gulp-notify');           // 提示信息
 
     // 定义路径对象
-    var srcRoot = './';                            // 源目录文件夹 ./表示当前目录
+    var srcRoot = '';                            // 源目录文件夹 ./表示当前目录,这里没有设置./是因为需要监听新增的图片
     var distRoot = '../dist/';                     // 输出目录文件夹
     var paths = {
         src: {
@@ -38,7 +38,7 @@
 
     //拷贝图片，开发环境不需要每次都压缩图片。之所以需要拷贝一次，是因为会执行clean任务。
     gulp.task('img', function () {
-        var imgSrc = paths.src.img + '**';
+        var imgSrc = paths.src.img + '*.+(jpeg|jpg|png|svg|gif|ico)';
         var imgDest = paths.dist.img;
 
         return gulp.src(imgSrc)
@@ -55,7 +55,11 @@
         return gulp.src(imgSrc)
             .pipe(changed(imgDest))
             .pipe(imagemin({
-                progressive: true,
+                optimizationLevel: 5,                     //类型：Number  默认：3  取值范围：0-7（优化等级）
+                progressive: true,                        //类型：Boolean 默认：false 无损压缩jpg图片
+                interlaced: true,                         //类型：Boolean 默认：false 隔行扫描gif进行渲染
+                multipass: true,                          //类型：Boolean 默认：false 多次优化svg直到完全优化
+                svgoPlugins: [{removeViewBox: false}],    //不要移除svg的viewbox属性
                 use: [pngquant({quality: '65-80'})]
             }))
             .pipe(gulp.dest(imgDest))
@@ -113,7 +117,7 @@
 
     //定义监听任务
     gulp.task('watch', function () {
-        gulp.watch(paths.src.img + '*.+(jpeg|jpg|png)', ['css']);//此任务好像没有效果？ 原因：用 './xx' 开头作为当前路径开始，会导致无法监测到新增文件，所以直接省略掉 './' 即可。'./images/*' === 'images/*'
+        gulp.watch(paths.src.img + '*.+(jpeg|jpg|png|svg|gif|ico)', ['img']);//此任务好像没有效果？ 原因：用 './xx' 开头作为当前路径开始，会导致无法监测到新增文件，所以直接省略掉 './' 即可。'./images/*' === 'images/*'
         gulp.watch(paths.src.less + '*.less', ['css']);
         gulp.watch(paths.src.scripts + '*.js', ['js']);
     });

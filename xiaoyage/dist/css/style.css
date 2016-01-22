@@ -3644,8 +3644,8 @@ a {
   padding: 80px 0 40px;
   background: #fbfbf6 url('../../dist/img/dishes/dishes-img1.png') no-repeat center top;
   background-size: auto 100%;
-  -webkit-transition: all .3s ease;
-  transition: all .3s ease;
+  -webkit-transition: all .4s ease;
+  transition: all .4s ease;
 }
 .dishes-card-list .hover-card .dish-logo {
   height: 35px;
@@ -3728,43 +3728,10 @@ a {
   background-color: #fff;
 }
 .dynamic-model .model-content p {
+  margin-bottom: 20px;
+  font-size: 16px;
   text-indent: 2em;
-}
-.close-model {
-  position: absolute;
-  z-index: 1001;
-  top: -15px;
-  right: -15px;
-  height: 30px;
-  background-color: #fff;
-  border: 3px solid #fff;
-  border-radius: 100px;
-  cursor: pointer;
-}
-.dynamic-model-content {
-  display: none;
-  position: fixed;
-  top: 100px;
-  z-index: 1000;
-  width: 100%;
-}
-.dynamic-model-content .dynamic-details {
-  height: 700px;
-  overflow: auto;
-  padding-bottom: 40px;
-  background-color: #fbfbf6;
-}
-.dynamic-model-content .dynamic-details .top-img {
-  width: 100%;
-}
-.dynamic-model-content .dynamic-details .content {
-  padding: 20px;
-}
-.dynamic-model-content .dynamic-details .content p {
-  text-indent: 2em;
-}
-.dynamic-model-content .dynamic-details .content img {
-  width: 80%;
+  line-height: 1.6;
 }
 .gift-top .top-banner {
   background-image: url(../../dist/img/gift/gift_top_banner.png);
