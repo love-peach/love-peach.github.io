@@ -35,11 +35,10 @@ $(document).ready(function () {
 
     //导航栏鼠标悬停显示二维码
     $('.slide-erweima-wrap').hover(function () {
-        $('.slide-erweima').stop(false,true).slideDown(300);
-    },function () {
-        $('.slide-erweima').stop(true,false).slideUp(300);
+        $('.slide-erweima').stop(false, true).slideDown(300);
+    }, function () {
+        $('.slide-erweima').stop(true, false).slideUp(300);
     });
-
 
 
     //回到顶部
@@ -49,5 +48,13 @@ $(document).ready(function () {
         } else {
             $("#back-to-top").slideUp(300);
         }
+    });
+
+    //子页面top-banner了解详情等点击后交互效果
+    $('.show-slide-box').on('click', function () {
+        $('.banner-slide-down').css({top: '5px'});
+    });
+    $('.banner-slide-down').on('click', function () {
+        $(this).css({top: '-100%'});
     });
 });

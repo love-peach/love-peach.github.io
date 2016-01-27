@@ -9,11 +9,9 @@ $('document').ready(function () {
         $('.dynamic-top').css({overflow: 'initial'})
         $('.footer').hide();
     });
-    $('.dynamic-model .model-close').on('click',function () {
+    $('.dynamic-model .model-close,.dynamic-model .model-mask').on('click',function () {
         $('.dynamic-model').css({top: '100%'});
          $('.dynamic-top').css({overflow: 'hidden'});
         $('.footer').show();
     })
-
-
 });
