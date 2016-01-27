@@ -209,154 +209,98 @@
   }
 }
 
+
 //导航条样式
-.nav-bar {
-  width: 100%;
+.nav {
   position: fixed;
   z-index: 999;
-  .nav-left {
-    position: fixed;
-    left: 0;
-    .nav-brand {
-      display: inline-block;
-      width: 124px;
-      height: 39px;
-      padding-top: 40px;
-      padding-left: 50px;
-      img {
-        width: 100%
-      }
+  width: 100%;
+  top: 0;
+  padding: 20px 20px 0;
+  box-sizing: border-box;
+  transition: all .3s ease;
+  .nav-bar {
+    background-color: transparent;
+    transition: background-color .3s ease
+  }
+  .nav-brand {
+    float: left;
+    font-size: 0;
+    img {
+      padding: 15px 10px;
     }
   }
-  .nav-right {
-    position: fixed;
-    right: 0;
-    .nav-menu {
-      padding-top: 54px;
-      padding-right: 50px;
-      li {
-        float: left;
-        a {
-          padding: 5px 30px;
-          font-size: 14px;
-          -webkit-transition: color .3s ease;
-          transition: color .3s ease;
-        }
-        a:hover {
-          color: @active-color;
-        }
+  .nav-menu {
+    float: right;
+    li {
+      float: left;
+      a {
+        display: inline-block;
+        padding-right: 30px;
+        padding-left: 30px;
+        font-size: 14px;
+        line-height: 80px;
+        -webkit-transition: color .3s ease;
+        transition: color .3s ease;
       }
-      .active {
-        color: @active-color;
+      a:hover {
+        color: @mainColor;
       }
-      li.bar {
-        width: 1px;
-        height: 15px;
-        margin-right: 45px;
-        margin-left: 35px;
-        background: #d7d5d2;
-        cursor: initial;
+    }
+    .active {
+      color: @active-color;
+    }
+    li.bar {
+      position: relative;
+      top: 32px;
+      width: 1px;
+      height: 15px;
+      margin-right: 45px;
+      margin-left: 35px;
+      background: #d7d5d2;
+      cursor: initial;
+    }
+    .menu-icon {
+      margin-right: 15px;
+      margin-left: 15px;
+    }
+    .menu-icon-wrap {
+      position: relative;
+      a {
+        padding:  0 5px;
       }
-      .menu-icon {
-        margin-right: 15px;
-        margin-left: 15px;
+      .menu-icon-white {
+        display: inline-block;
       }
-      .menu-icon-wrap {
-        position: relative;
-        a {
-          padding: 5px;
-        }
-        .menu-icon-white {
-          display: inline-block;
-        }
-        .menu-icon-change {
-          display: none;
-        }
+      .menu-icon-change {
+        display: none;
       }
-      .change-menu-icon {
-        .menu-icon-white {
-          display: none;
-        }
-        .menu-icon-change {
-          display: inline-block;
-        }
+    }
+    .slide-erweima-wrap {
+        margin-right: 60px;
+    }
+    .change-menu-icon {
+      .menu-icon-white {
+        display: none;
+      }
+      .menu-icon-change {
+        display: inline-block;
       }
     }
   }
 }
 
-//不浮动的导航条
-.change-nav-bar {
-  width: 100%;
-  position: relative;
-  .nav-left {
-    float: left;
-    left: 0;
-    .nav-brand {
-      display: inline-block;
-      width: 124px;
-      height: 39px;
-      padding-top: 10px;
-      padding-left: 50px;
-      img {
-        width: 100%
-      }
-    }
-  }
-  .nav-right {
-    float: right;
-    right: 0;
-    .nav-menu {
-      padding-top: 20px;
-      padding-right: 50px;
-      li {
-        float: left;
-        a {
-          padding: 5px 30px;
-          font-size: 14px;
-          -webkit-transition: color .3s ease;
-          transition: color .3s ease;
-        }
-        a:hover {
-          color: @mainColor;
-        }
-      }
-      .active {
-        color: @mainColor;
-      }
-      li.bar {
-        width: 1px;
-        height: 15px;
-        margin-right: 45px;
-        margin-left: 35px;
-        background: @border-color;
-        cursor: initial;
-      }
-      .menu-icon {
-        margin-right: 15px;
-        margin-left: 15px;
-      }
-      .menu-icon-wrap {
-        position: relative;
-        a {
-          padding: 5px;
-        }
-        .menu-icon-white {
-          display: inline-block;
-        }
-        .menu-icon-change {
-          display: none;
-        }
-      }
-      .change-menu-icon {
-        .menu-icon-white {
-          display: none;
-        }
-        .menu-icon-change {
-          display: inline-block;
-        }
-      }
-    }
+//隐藏导航条
+.nav.nav-hidden {
+
+  top: -103px;
+}
+
+.nav.nav-change-color {
+  padding-top: 0;
+  .nav-bar {
+    background-color: #fff;
+    box-shadow: 0 5px 8px -5px #aaa;
   }
 }
 
@@ -364,10 +308,11 @@
 .slide-erweima {
   display: none;
   position: absolute;
-  top: 23px;
+  top: 55px;
   right: -10px;
   img {
     width: 120px;
+    border: 1px solid @gift-card-bg;
   }
 }
 

@@ -40,6 +40,46 @@ $(document).ready(function () {
         $('.slide-erweima').stop(true, false).slideUp(300);
     });
 
+    //导航栏滑动一定距离收起
+    var scrollSpace = 10;
+    var scrollFunc = function (e) {
+        e = e || window.event;
+        var currentScrollTop = $(window).scrollTop();
+        if (currentScrollTop > 0) {
+            $(".nav").addClass('nav-change-color');
+            if (currentScrollTop > 580) {
+                $(".nav").addClass('nav-hidden');
+                if (e.wheelDelta) {  //判断浏览器IE，谷歌滑轮事件
+                    if (e.wheelDelta > scrollSpace) { //当滑轮向上滚动时
+                        $(".nav").removeClass('nav-hidden');
+                    }
+                    if (e.wheelDelta < scrollSpace) { //当滑轮向下滚动时
+                        $(".nav").addClass('nav-hidden');
+                    }
+                } else if (e.detail) {  //Firefox滑轮事件
+                    if (e.detail > scrollSpace) { //当滑轮向上滚动时
+                        $(".nav").removeClass('nav-hidden');
+                    }
+                    if (e.detail < scrollSpace) { //当滑轮向下滚动时
+                        $(".nav").addClass('nav-hidden');
+                    }
+                }
+
+            }
+        }
+        else if (currentScrollTop === 0) {
+            $(".nav").removeClass('nav-hidden nav-change-color');
+        }
+    };
+
+    //给页面绑定滑轮滚动事件
+    if (document.addEventListener) {//firefox
+        document.addEventListener('DOMMouseScroll', scrollFunc, false);
+    }
+    //滚动滑轮触发scrollFunc方法  //ie 谷歌
+    window.onmousewheel = document.onmousewheel;
+    document.onmousewheel = scrollFunc;
+
 
     //回到顶部
     $(window).bind('scroll', function () {
