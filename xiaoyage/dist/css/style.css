@@ -3308,6 +3308,7 @@ a {
   font-size: 0;
 }
 .img-erweima-wrap .img-erweima {
+  width: 140px;
   min-height: 110px;
 }
 .contact-info {
