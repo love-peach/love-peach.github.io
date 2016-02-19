@@ -3039,6 +3039,9 @@ a {
   margin-top: 50px;
   margin-bottom: 40px;
 }
+.top-banner .banner-content-wrap .banner-slide-down img {
+  width: 140px;
+}
 .subpage-title-wrap {
   padding-bottom: 50px;
 }
@@ -3617,6 +3620,7 @@ a {
 }
 .dishes-card-list .hover-card .dish-erweima {
   margin-bottom: 28px;
+  width: 140px;
 }
 .dish-details {
   background: #fff;
@@ -3682,6 +3686,9 @@ a {
   right: 40px;
   z-index: 1000;
   width: 40px;
+  background: #fff;
+  border-radius: 26px;
+  border: 2px solid #fff;
   cursor: pointer;
 }
 .dynamic-model .model-content {
